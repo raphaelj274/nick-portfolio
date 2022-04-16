@@ -1,8 +1,11 @@
-import {FC} from 'react' 
-import './Homepage.css'
+import {FC, useState} from 'react'
+import { Entry } from './Entry'
+import { HomePageContent } from './HomePageContent'
 
 export const Homepage:FC = () => {
-    return <div style={{color: "red"}}>
-        Hello
-    </div>
+    const [entered, setEntered] = useState(false)
+
+    return <>
+        {entered ? <HomePageContent/> : <Entry setEntered={setEntered}/>}
+    </>
 }
