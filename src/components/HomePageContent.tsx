@@ -11,7 +11,7 @@ export const HomePageContent:FC = () => {
                 <NavBar/>
             </div>
             <div style={{gridColumnStart: 2, gridColumnEnd: 3}}>
-                <img src={sculptureA} width={'100%'}/>
+                <img src={sculptureA} width={'100%'} alt="Nick's sculpture"/>
             </div>
             <div style={{gridColumnStart: 3, gridColumnEnd: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',  marginLeft: '15px', fontSize: 'small'}}>
                     <p style={{margin: '0', fontWeight: 'bold'}}>
@@ -24,7 +24,7 @@ export const HomePageContent:FC = () => {
         </div>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}>
             <div style={{gridColumnStart: 2, gridColumnEnd: 3}}>
-                <img src={sculptureB} width={'100%'}/>
+                <img src={sculptureB} width={'100%'} alt="Nick's sculpture"/>
             </div>
             <div style={{gridColumnStart: 3, gridColumnEnd: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',  marginLeft: '15px', fontSize: 'small'}}>
                     <p style={{margin: '0', fontWeight: 'bold'}}>
@@ -37,7 +37,7 @@ export const HomePageContent:FC = () => {
         </div>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}>
             <div style={{gridColumnStart: 2, gridColumnEnd: 3}}>
-                <img src={sculptureC} width={'100%'}/>
+                <img src={sculptureC} width={'100%'} alt="Nick's sculpture"/>
             </div>
             <div style={{gridColumnStart: 3, gridColumnEnd: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',  marginLeft: '15px', fontSize: 'small'}}>
                     <p style={{margin: '0', fontWeight: 'bold'}}>

@@ -1,6 +1,6 @@
 import {FC} from 'react' 
 
-export const NavBar = () => {
+export const NavBar: FC = () => {
     return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', }}>
         <p style={{margin: '0'}}> Nick Collee
         </p> 
