@@ -1,8 +1,8 @@
 import {FC} from 'react' 
 
 export const NavBar: FC = () => {
-    return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', }}>
-        <p style={{margin: '0'}}> Nick Collee
+    return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', marginTop: '100px'}}>
+        <p style={{margin: 0}}> Nick Collee
         </p> 
          <p>
             Works
