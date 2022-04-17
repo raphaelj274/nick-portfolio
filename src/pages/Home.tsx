@@ -2,7 +2,7 @@ import {FC} from 'react'
 import { Work } from '../services/works'
 import { EmptyBar } from '../components/EmptyBar'
 import { NavBar } from '../components/NavBar'
-import useIsMobile from '../services/screenSize'
+import useIsMobile from '../services/useIsMobile'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'

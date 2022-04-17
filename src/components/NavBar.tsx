@@ -1,6 +1,6 @@
 import {FC} from 'react' 
 import { Link } from 'react-router-dom'
-import useIsMobile from '../services/screenSize'
+import useIsMobile from '../services/useIsMobile'
 
 const pages = [{route: '/home', title: 'Nick Collee'},{route:'/works', title: 'Works'},{ route: '/writing', title: 'Writing'},{ route: '/shop', title: 'Shop'}, {route: '/contact', title: 'Contact'}]
 
