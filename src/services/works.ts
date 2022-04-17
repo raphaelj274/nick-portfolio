@@ -1,5 +1,5 @@
 import sculptureA from '../images/laura-seaman-01RpyK6lKBs-unsplash.jpg'
-import sculptureB from '../images/sirirat-wuthipracharat-qytWcXSCDug-unsplash.jpg'
+import sculptureB from '../images/akira-hojo-_86u_Y0oAaM-unsplash.jpg'
 import sculptureC from '../images/qingbao-meng-01_igFr7hd4-unsplash.jpg'
 
 export interface Work {
