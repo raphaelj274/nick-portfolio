@@ -1,4 +1,5 @@
 import {FC} from 'react' 
+import { Link } from 'react-router-dom'
 
 export const NavBar: FC = () => {
     return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', marginTop: '100px'}}>
@@ -13,8 +14,8 @@ export const NavBar: FC = () => {
          <p>
             Shop
          </p>
-         <p>
+         <Link to='/contact' style={{textDecoration: 'none', color: 'black'}}>
             Contact
-         </p>
+         </Link>
     </div>
 }
