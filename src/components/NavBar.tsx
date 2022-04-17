@@ -9,8 +9,8 @@ export const NavBar: FC = () => {
         return <>
         </>
     }
-    return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', marginTop: '100px', display: 'flex', flexDirection: 'column'}}>
-        {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black', margin: 10}}>
+    return <div style={{width: '100%', position: 'fixed', marginLeft: '60px', marginTop: '100px', display: 'flex', flexDirection: 'column', gap: 10}}>
+        {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black', margin: 0}}>
             {page.title}
          </Link>)}
     </div>
