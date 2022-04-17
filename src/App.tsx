@@ -1,9 +1,8 @@
-import React from 'react';
 import { Homepage } from './components/Homepage';
+import { Entry } from './components/Entry';
 import { BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 import { Contact } from './components/Contact';
-import { Entry } from './components/Entry';
 
 const App = () => {
   return (
