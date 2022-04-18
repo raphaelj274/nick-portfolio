@@ -25,7 +25,7 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
 }
 
 export const Home:FC<{works: Array<Work>}> = ({works}) => {
-    const marginTop = useIsMobile() ? '20px' : '100px'
+    const marginTop = useIsMobile() ? '0px' : '100px'
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
