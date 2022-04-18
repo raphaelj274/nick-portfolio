@@ -11,7 +11,7 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'
     return  <div style={{display: 'grid', gridTemplateColumns: gridTemplateColumns, width: '100%'}}>
     <div style={{gridColumnStart: 2, gridColumnEnd: 3}} onClick={onClick}>
-        <img src={work.image} width={'100%'} alt={work.alt} style={{marginBottom: -5}}/>
+        <img src={work.image} width={'100%'} alt={work.alt} style={{marginBottom: 0}}/>
     </div>
     {!useIsMobile() && <div style={{gridColumnStart: 3, gridColumnEnd: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',  marginLeft: '15px', fontSize: 'small', fontStyle:'italic'}}>
         <p style={{margin: '0', fontWeight: 'bold'}}>
