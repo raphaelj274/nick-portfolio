@@ -1,9 +1,12 @@
 import {FC} from 'react' 
+import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar'
 import { Work } from '../services/works'
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
-    return <div style={{}}>
+    const navigate = useNavigate();
+    const onClick = () => navigate(`/project/${work.id}`)
+    return <div style={{}} onClick={onClick}>
         <img src={work.image} width={'100%'} alt={work.alt} style={{}}/>
     </div>
 }

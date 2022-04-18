@@ -7,6 +7,7 @@ import { works } from './services/works'
 import { Works } from './pages/Works';
 import { Writing } from './pages/Writing';
 import { Shop } from './pages/Shop';
+import { Project } from './pages/Project';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/writing' element={<Writing/>}/>
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/project/:id' element={<Project works={works}/>}/>
       </Routes>
     </Router>
   );
