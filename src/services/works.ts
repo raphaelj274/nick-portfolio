@@ -1,5 +1,5 @@
 import sculptureA from '../images/concreteshoe.png'
-import sculptureB from '../images/church.jpeg'
+import sculptureB from '../images/lino.png'
 import sculptureC from '../images/fields.jpeg'
 import sculptureD from  '../images/spoon.jpeg'
 import sculptureE from  '../images/portrait.jpeg'
@@ -17,15 +17,15 @@ const concreteShoe: Work = {
     id: 'concreteshoe',
     image: sculptureA,
     alt: "Nick's sculpture",
-    date: "Granpa's Slippers 2022" ,
+    date: "Granpa's Slippers, 2022" ,
     caption: 'Concrete sculpture and moving image, London',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 }
-const church: Work = {
-    id: 'church',
+const lino: Work = {
+    id: 'lino',
     image: sculptureB,
     alt: "Nick's sculpture",
-    date: 'God 2022',
+    date: "Untitled, Lino 2022",
     caption: 'Sacre-Bleu, France',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 }
@@ -56,4 +56,4 @@ const portait: Work = {
 
 
 
-export const works = [concreteShoe, church, fields, spoon, portait]
+export const works = [concreteShoe, lino, fields, spoon, portait]
