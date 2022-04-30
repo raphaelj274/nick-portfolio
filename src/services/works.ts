@@ -11,11 +11,13 @@ export interface Work {
     date: string,
     caption: string
     description: string
+    imageCaption: string
 }
 
 const concreteShoe: Work = {
-    id: 'concreteshoe',
+    id: 'concrete shoe',
     image: sculptureA,
+    imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",
     date: "Granpa's Slippers, 2022" ,
     caption: 'Concrete sculpture and moving image, London',
@@ -24,6 +26,7 @@ const concreteShoe: Work = {
 const lino: Work = {
     id: 'lino',
     image: sculptureB,
+    imageCaption: 'Scultpure on beach',
     alt: "Nick's sculpture",
     date: "Untitled, Lino 2022",
     caption: 'Sacre-Bleu, France',
@@ -31,6 +34,7 @@ const lino: Work = {
 }
 const fields: Work = {
     id: 'fields',
+    imageCaption: 'Final sculpture',
     image: sculptureC,
     alt: "Nick's sculpture",
     date: 'Pow 2022',
@@ -39,6 +43,7 @@ const fields: Work = {
 }
 const spoon: Work = {
     id: 'spoon',
+    imageCaption: 'Final sculpture',
     image: sculptureD,
     alt: "Nick's sculpture",
     date: 'Boom 2020',
@@ -48,6 +53,7 @@ const spoon: Work = {
 const portait: Work = {
     id: 'portrait',
     image: sculptureE,
+    imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",
     date: 'Portrait of a mother 2020',
     caption: 'Ontario, Toronto',

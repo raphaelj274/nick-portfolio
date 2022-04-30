@@ -3,11 +3,16 @@ import { Navigate, useParams } from 'react-router-dom'
 import { Work } from '../services/works'
 
 const ProjectContent: FC<{work: Work}> = ({work}) => {
-    return <div style={{width: '60%'}}>
-        <h1>{work.id.toUpperCase()}</h1>
-        <p>{work.caption}</p>
+    return <div style={{width: '60%', display: "flex", flexDirection: "column", alignItems: 'center', gap: 60, paddingTop: 40 }}>
+        <div>
+            <h1>{work.id.toUpperCase()}</h1>
+            <p>{work.caption}</p>
+        </div>
+        <div style={{maxWidth: '50%'}} >
+            <img src={work.image} alt={work.alt} width={'100%'} style={{ border: '1px solid black'}}/>
+            <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{work.imageCaption}</p>
+        </div>
         <p>{work.description}</p>
-        <img src={work.image} width={'100%'} alt={work.alt} style={{}}/>
     </div>
 }
 
