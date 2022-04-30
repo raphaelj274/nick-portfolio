@@ -1,18 +1,24 @@
-import {FC} from 'react' 
+import {FC, useState} from 'react' 
 import { Navigate, useParams } from 'react-router-dom'
-import { Work } from '../services/works'
+import { RelatedImage, Work } from '../services/works'
 
 const ProjectContent: FC<{work: Work}> = ({work}) => {
+    const workAsRelated: RelatedImage = {image: work.image, caption: work.imageCaption}
+    const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
+    const carousel = [{image: work.image, caption: work.caption}, ...work.relatedImages]
     return <div style={{width: '60%', display: "flex", flexDirection: "column", alignItems: 'center', gap: 60, paddingTop: 40 }}>
         <div>
             <h1>{work.id.toUpperCase()}</h1>
             <p>{work.caption}</p>
         </div>
-        <div style={{maxWidth: '50%'}} >
-            <img src={work.image} alt={work.alt} width={'100%'} style={{ border: '1px solid black'}}/>
-            <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{work.imageCaption}</p>
+        <div style={{maxWidth: '60%'}} >
+            <img src={currentImage.image} alt={currentImage.caption} width={'100%'} style={{}}/>
+            <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
+            <div style={{display: 'flex', marginTop: '20px'}}>
+                {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => setCurrentImage(related)}/>)}
+            </div>
         </div>
-        <p>{work.description}</p>
+        <p style={{maxWidth: '60%', fontSize: 'small'}}>{work.description}</p>
     </div>
 }
 
