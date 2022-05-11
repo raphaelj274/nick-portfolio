@@ -1,4 +1,4 @@
-import {FC} from 'react' 
+import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
 
 export const Writing:FC = () => {
@@ -6,10 +6,10 @@ export const Writing:FC = () => {
          <NavBar/>
          <div style={{width: '100%', textAlign: 'center', height: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
              <h1>
-                Writing 
+                Writing
              </h1>
              <p>
-                 hehehh
+                 hahahah
              </p>
          </div>
     </div>
