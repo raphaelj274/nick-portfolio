@@ -3,7 +3,7 @@ import { NavBar } from '../components/NavBar'
 import { writingPageValues } from '../services/works'
 
 export const Writing:FC = () => {
-    return <div style={{maxWidth: '100%', width: '100vw', height: '100vh', paddingBottom: '320px'}}>
+    return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
         <div style={{maxWidth: 'calc(100% - 260px)', width: '100%', textAlign: 'left', marginLeft: '230px', marginRight: '60px', display: 'grid', gridGap: '80px', gridTemplateColumns: '1.8fr 1.1fr'}}>
             <div style={{gridColumn: '1', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
