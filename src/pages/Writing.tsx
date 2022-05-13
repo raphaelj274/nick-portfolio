@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
-import placeholder from '../images/tateimage.jpg'
+import { writingPageValues } from '../services/works'
 
 export const Writing:FC = () => {
     return <div style={{maxWidth: '100%', width: '100vw', height: '100vh', paddingBottom: '320px'}}>
@@ -8,33 +8,19 @@ export const Writing:FC = () => {
         <div style={{maxWidth: 'calc(100% - 260px)', width: '100%', textAlign: 'left', marginLeft: '230px', marginRight: '60px', display: 'grid', gridGap: '80px', gridTemplateColumns: '1.8fr 1.1fr'}}>
             <div style={{gridColumn: '1', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                 <h1 style={{textAlign: 'left', margin: '92px auto 24px auto'}}>
-                A theatrical exhibition by the Turner Prize winning artist and cultural activist
+                {writingPageValues.writingHeading}
                 </h1>
                 <p style={{textAlign: 'left'}}>
-                This large-scale exhibition will debut recent work and include
-                selected highlights from Lubaina Himid’s influential career.
-                Taking inspiration from her interest in theatre, the exhibition
-                will unfold in a sequence of scenes designed to place visitors
-                centre-stage and backstage.
+                {writingPageValues.firstParagraph}
                 </p>
                 <p style={{textAlign: 'left', marginTop: '0px'}}>
-                Initially trained in theatre design, Himid is known for her
-                innovative approaches to painting and to social engagement.
-                She has been pivotal in the UK since the 1980s for her contributions
-                to the British Black arts movement, making space for the expression
-                and recognition of Black experience and women’s creativity. Over the
-                last decade, she has earned international recognition for her figurative
-                paintings, which explore overlooked and invisible aspects of history and
-                of contemporary everyday life. In 2017 she was awarded the Turner Prize
-                and in 2018 she was bestowed with the honorary title of CBE for her
-                contributions to the arts.
+                {writingPageValues.secondParagraph}
                 </p>
                 <p style={{textAlign: 'left', marginTop: '0px'}}>
-                <i>Exhibition organised by Tate Modern in collaboration with Musée
-                    cantonal des Beaux-Arts de Lausanne/Plateforme 10</i>
+                <i>{writingPageValues.italicText}</i>
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
-                    <img style={{marginTop: '20px', width: '100%'}} src={placeholder} alt={'Placeholder'}></img>
+                    <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={'Placeholder'}></img>
                     <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid</figcaption>
                 </div>
             </div>
