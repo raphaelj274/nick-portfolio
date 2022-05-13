@@ -1,5 +1,4 @@
 import {FC} from 'react'
-import { workerData } from 'worker_threads'
 import { NavBar } from '../components/NavBar'
 import placeholder from '../images/tateimage.jpg'
 
