@@ -6,12 +6,16 @@ const pages = [{route: '/home', title: 'Nick Collee'},{route:'/works', title: 'W
 
 export const NavBar: FC = () => {
     if (useIsMobile()) {
-        return <>
-        </>
-    }
+        return <div style={{minWidth: '100%', justifyContent: 'space-evenly', marginTop: '20px', display: 'flex', flexDirection: 'row', gap: 20}}>
+        {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
+            {page.title}
+         </Link>)}
+    </div>
+    } else {
     return <div style={{width: '90px', position: 'fixed', marginLeft: '60px', marginTop: '100px', display: 'flex', flexDirection: 'column', gap: 20}}>
         {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
             {page.title}
          </Link>)}
     </div>
+    }
 }
