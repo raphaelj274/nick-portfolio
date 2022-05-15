@@ -32,27 +32,12 @@ const desktopStyles = {
     sideBarBoxPadding: '10px 0px 0px 15px'
 }
 
-
 export const Writing:FC = () => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    // const gridTemplateColumns = useIsMobile() ? '1fr' : '1.8fr 1.1fr'
-    // const textAlignment = useIsMobile() ? 'center' : 'left'
-    // const gridGap = useIsMobile() ? '40px' : '80px'
-    // const sideBarGridColumn = useIsMobile() ? '1' : '2'
-    // const gridMargins = useIsMobile() ? '30px auto auto auto' : 'auto 60px auto 230px'
-    // const gridMaxWidth = useIsMobile() ? '90%' : 'calc(100% - 260px)'
-    // const headingMargin = useIsMobile() ? '0': '92px auto 24px auto'
-    // const sideBarTopMargin = useIsMobile () ? '0' : '90px'
-    // const sideBarTopBorder = useIsMobile() ? '3px dotted #EBE7E6' : 'none'
-    // const sideBarFlexAlignment = useIsMobile() ? 'center' : 'flex-start'
-    // const sideBarBoxPadding = useIsMobile() ? '20px 0px 10px 0px' : '10px 0px 0px 15px'
-
-    const alignment = useIsMobile() ? 'center' : 'left'
-
-    console.log(typeof alignment)
-    console.log(typeof styles.textAlignment)
+    // Ignore the line below - this is to demonstrate something later
+    // const alignment = useIsMobile() ? 'center' : 'left'
 
     return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
