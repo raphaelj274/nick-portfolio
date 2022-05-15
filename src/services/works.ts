@@ -98,11 +98,10 @@ export const works = [concreteShoe, lino, fields, spoon, portait]
 
 export const writingPageValues = {
     writingHeading: 'A theatrical exhibition by the Turner Prize winning artist and cultural activist',
-    firstParagraph: 'This large-scale exhibition will debut recent work and include selected \
+    paragraphs: ['This large-scale exhibition will debut recent work and include selected \
     highlights from Lubaina Himid’s influential career. Taking inspiration from her interest in \
     theatre, the exhibition will unfold in a sequence of scenes designed to place visitors centre-stage \
-    and backstage.',
-    secondParagraph: 'Initially trained in theatre design, Himid is known for her \
+    and backstage.', 'Initially trained in theatre design, Himid is known for her \
     innovative approaches to painting and to social engagement. She has been \
     pivotal in the UK since the 1980s for her contributions to the British \
     Black arts movement, making space for the expression and recognition \
@@ -111,9 +110,7 @@ export const writingPageValues = {
     earned international recognition for her figurative paintings, which explore \
     overlooked and invisible aspects of history and of contemporary everyday life. \
     In 2017 she was awarded the Turner Prize and in 2018 she was bestowed with the \
-     honorary title of CBE for her contributions to the arts.',
-    thirdParagraph: undefined,
-    fourthParagraph: undefined,
+     honorary title of CBE for her contributions to the arts.'],
     italicText: 'Exhibition organised by Tate Modern in collaboration with Musée \
     cantonal des Beaux-Arts de Lausanne/Plateforme 10',
     image: writingPageImage

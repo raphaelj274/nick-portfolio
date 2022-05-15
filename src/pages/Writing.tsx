@@ -3,21 +3,18 @@ import { NavBar } from '../components/NavBar'
 import { writingPageValues } from '../services/works'
 
 export const Writing:FC = () => {
-    return <div style={{maxWidth: '100%', width: '100vw', height: '100vh', paddingBottom: '320px'}}>
+    return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '320px'}}>
         <NavBar/>
         <div style={{maxWidth: 'calc(100% - 260px)', width: '100%', textAlign: 'left', marginLeft: '230px', marginRight: '60px', display: 'grid', gridGap: '80px', gridTemplateColumns: '1.8fr 1.1fr'}}>
             <div style={{gridColumn: '1', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                 <h1 style={{textAlign: 'left', margin: '92px auto 24px auto'}}>
-                {writingPageValues.writingHeading}
+                    {writingPageValues.writingHeading}
                 </h1>
-                <p style={{textAlign: 'left'}}>
-                {writingPageValues.firstParagraph}
-                </p>
+                {writingPageValues.paragraphs.map(x => {
+                    return <p>{x}<br></br></p>
+                })}
                 <p style={{textAlign: 'left', marginTop: '0px'}}>
-                {writingPageValues.secondParagraph}
-                </p>
-                <p style={{textAlign: 'left', marginTop: '0px'}}>
-                <i>{writingPageValues.italicText}</i>
+                    <i>{writingPageValues.italicText}</i>
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
                     <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={'Placeholder'}></img>
