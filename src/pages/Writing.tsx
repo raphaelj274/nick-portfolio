@@ -11,7 +11,7 @@ export const Writing:FC = () => {
                     {writingPageValues.writingHeading}
                 </h1>
                 {writingPageValues.paragraphs.map(x => {
-                    return <p>{x}<br></br></p>
+                    return <p style={{textAlign: 'left', marginTop: '0px'}}>{x}<br></br></p>
                 })}
                 <p style={{textAlign: 'left', marginTop: '0px'}}>
                     <i>{writingPageValues.italicText}</i>
