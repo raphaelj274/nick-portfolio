@@ -33,7 +33,7 @@ export const Writing:FC = () => {
                 <i>{writingPageValues.italicText}</i>
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
-                    <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={'Placeholder'}></img>
+                    <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={writingPageValues.imageAltText}></img>
                     <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid</figcaption>
                 </div>
             </div>

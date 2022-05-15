@@ -103,6 +103,7 @@ export const writingPageValues = {
     thirdParagraph: undefined,
     fourthParagraph: undefined,
     italicText: 'Exhibition organised by Tate Modern in collaboration with Musée cantonal des Beaux-Arts de Lausanne/Plateforme 10',
-    image: writingPageImage
+    image: writingPageImage,
+    imageAltText: 'Placeholder'
     // imageCaption: ''
 }
