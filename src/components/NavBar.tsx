@@ -6,7 +6,7 @@ const pages = [{route: '/home', title: 'Nick Collee'},{route:'/works', title: 'W
 
 export const NavBar: FC = () => {
     if (useIsMobile()) {
-        return <div style={{minWidth: '100%', justifyContent: 'space-evenly', marginTop: '20px', display: 'flex', flexDirection: 'row', gap: 20}}>
+        return <div style={{minWidth: '100%', justifyContent: 'space-evenly', marginTop: '20px', display: 'flex', flexDirection: 'row', gap: 20, marginBottom: '25px'}}>
         {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
             {page.title}
          </Link>)}
