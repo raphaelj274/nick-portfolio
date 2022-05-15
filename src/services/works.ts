@@ -113,6 +113,6 @@ export const writingPageValues = {
      honorary title of CBE for her contributions to the arts.'],
     italicText: 'Exhibition organised by Tate Modern in collaboration with Musée \
     cantonal des Beaux-Arts de Lausanne/Plateforme 10',
-    image: writingPageImage
-    // imageCaption: ''
+    image: writingPageImage,
+    imageCaption: 'Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid'
 }

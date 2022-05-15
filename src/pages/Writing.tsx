@@ -18,7 +18,7 @@ export const Writing:FC = () => {
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
                     <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={'Placeholder'}></img>
-                    <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid</figcaption>
+                    <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>{writingPageValues.imageCaption}</figcaption>
                 </div>
             </div>
             <div style={{gridColumn: '2', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '90px'}}>
