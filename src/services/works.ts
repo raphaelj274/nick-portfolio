@@ -98,8 +98,7 @@ export const works = [concreteShoe, lino, fields, spoon, portait]
 
 export const writingPageValues = {
     writingHeading: 'A theatrical exhibition by the Turner Prize winning artist and cultural activist',
-    paragraphs: ['This large-scale exhibition will debut recent work and include selected \
-    highlights from Lubaina Himid’s influential career. Taking inspiration from her interest in \
+    paragraphs: ['This large-scale exhibition will debut recent work and include selected highlights from Lubaina Himid’s influential career. Taking inspiration from her interest in \
     theatre, the exhibition will unfold in a sequence of scenes designed to place visitors centre-stage \
     and backstage.', 'Initially trained in theatre design, Himid is known for her \
     innovative approaches to painting and to social engagement. She has been \
@@ -114,5 +113,6 @@ export const writingPageValues = {
     italicText: 'Exhibition organised by Tate Modern in collaboration with Musée \
     cantonal des Beaux-Arts de Lausanne/Plateforme 10',
     image: writingPageImage,
-    imageCaption: 'Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid'
+    imageCaption: 'Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid',
+    imageAltText: 'placeholder'
 }
