@@ -6,39 +6,35 @@ const pages = [{route: '/home', title: 'Nick Collee'},{route:'/works', title: 'W
 
 const mobileStyles = {
     minWidth: '100%',
+    width: 'initial',
     justifyContent: 'space-evenly',
     marginTop: '20px',
     marginBottom: '25px',
     marginLeft: 'initial',
-    flexDirection: 'row',
-    position: 'initial'
+    flexDirection: 'row' as const,
+    position: 'initial' as const
 }
 
 const desktopStyles = {
     minWidth: 'initial',
+    width: '90px',
     justifyContent: 'initial',
     marginTop: '100px',
     marginBottom: 'initial',
     marginLeft: '60px',
-    flexDirection: 'column',
-    position: 'fixed'
+    flexDirection: 'column' as const,
+    position: 'fixed' as const
 }
 
 export const NavBar: FC = () => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    if (useIsMobile()) {
-        return <div style={{minWidth: '100%', justifyContent: 'space-evenly', marginTop: '20px', display: 'flex', flexDirection: 'row', gap: 20, marginBottom: '25px'}}>
-        {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
-            {page.title}
-         </Link>)}
+    return <div style={{minWidth: styles.minWidth, width: styles.width, justifyContent: styles.justifyContent, position: styles.position, marginLeft: styles.marginLeft, marginTop: styles.marginTop, display: 'flex', flexDirection: styles.flexDirection, gap: 20, marginBottom: styles.marginBottom}}>
+    {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
+        {page.title}
+    </Link>)}
     </div>
-    } else {
-    return <div style={{width: '90px', position: 'fixed', marginLeft: '60px', marginTop: '100px', display: 'flex', flexDirection: 'column', gap: 20}}>
-        {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
-            {page.title}
-         </Link>)}
-    </div>
-    }
+
 }
+
