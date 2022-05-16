@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
-import { writingPageValues } from '../services/works'
+import { WritingContent } from '../services/works'
 import useIsMobile from '../services/useIsMobile'
 
 
@@ -11,7 +11,7 @@ const mobileStyles = {
     sideBarGridColumn: '1',
     gridMargins: '0 auto auto auto',
     gridMaxWidth: '90%',
-    headingMargin : '0',
+    headingMargin : '0 0 23px 0',
     sideBarTopMargin: '0',
     sideBarTopBorder: '3px dotted #EBE7E6',
     sideBarFlexAlignment: 'center',
@@ -32,38 +32,34 @@ const desktopStyles = {
     sideBarBoxPadding: '10px 0px 0px 15px'
 }
 
-export const Writing:FC = () => {
+export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    // Ignore the line below - this is to demonstrate something later
-    // const alignment = useIsMobile() ? 'center' : 'left'
-
     return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
-        <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment!, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
+        <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
             <div style={{gridColumn: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start'}}>
                 <h1 style={{margin: styles.headingMargin}}>
-                {writingPageValues.writingHeading}
+                {writingContent.heading}
                 </h1>
-                <p>
-                {writingPageValues.firstParagraph}
-                </p>
+                {writingContent.paragraphs.map(x => {
+                    return <p style={{marginTop: '0px'}}>{x}</p>
+                })}
                 <p style={{marginTop: '0px'}}>
-                {writingPageValues.secondParagraph}
-                </p>
-                <p style={{marginTop: '0px'}}>
-                <i>{writingPageValues.italicText}</i>
+                <i>{writingContent.italicText}</i>
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
-                    <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={writingPageValues.imageAltText}></img>
+                    <img style={{marginTop: '20px', width: '100%'}} src={writingContent.image} alt={writingContent.imageAltText}></img>
                     <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid</figcaption>
                 </div>
             </div>
             <div style={{gridColumn: styles.sideBarGridColumn, display: 'flex', flexDirection: 'column', alignItems: styles.sideBarFlexAlignment, justifyContent: 'start', marginTop: styles.sideBarTopMargin}}>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderTop: styles.sideBarTopBorder, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Tate Modern</h2>
-                    <p style={{marginTop: '-6px'}}>Bankside <br></br> London SE1 9TG <br></br> Plan your visit</p>
+                    <p style={{marginTop: '-6px'}}>Bankside</p>
+                    <p style={{marginTop: '-6px'}}>London SE1 9TG</p>
+                    <p style={{marginTop: '-6px'}}>Plan your visit</p>
                 </div>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Dates</h2>
@@ -79,7 +75,10 @@ export const Writing:FC = () => {
                 </div>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Pricing</h2>
-                    <p style={{marginTop: '-6px', marginBottom:'20px'}}>£16 / Free for members<br></br><br></br>Concessions available<br></br><br></br>£5 for Tate Collective. 16-25? Sign up and log in to book <br></br><br></br>See Booking and Ticketing FAQs<br></br></p>
+                    <p style={{marginTop: '-6px'}}>£16 / Free for members</p>
+                    <p style={{marginTop: '-6px'}}>Concessions available</p>
+                    <p style={{marginTop: '-6px'}}>£5 for Tate Collective. 16-25? Sign up and log in to book</p>
+                    <p style={{marginTop: '-6px'}}>See Booking and Ticketing FAQs</p>
                     <a href={'/works'} style={{display: 'inline-block', boxSizing:'border-box', padding:'14px 17px', color:'#f2f2f2', backgroundColor: '#DB2D04', cursor:'pointer', textDecoration:'none', fontWeight: '600', marginBottom: '20px'}}>Take a look at my work</a>
                 </div>
             </div>
