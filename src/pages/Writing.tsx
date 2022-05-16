@@ -44,7 +44,7 @@ export const Writing:FC = () => {
                 {writingPageValues.writingHeading}
                 </h1>
                 {writingPageValues.paragraphs.map(x => {
-                    return <p style={{textAlign: 'left', marginTop: '0px'}}>{x}<br></br></p>
+                    return <p style={{textAlign: 'left', marginTop: '0px'}}>{x}</p>
                 })}
                 <p style={{marginTop: '0px'}}>
                 <i>{writingPageValues.italicText}</i>
@@ -57,7 +57,9 @@ export const Writing:FC = () => {
             <div style={{gridColumn: styles.sideBarGridColumn, display: 'flex', flexDirection: 'column', alignItems: styles.sideBarFlexAlignment, justifyContent: 'start', marginTop: styles.sideBarTopMargin}}>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderTop: styles.sideBarTopBorder, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Tate Modern</h2>
-                    <p style={{marginTop: '-6px'}}>Bankside <br></br> London SE1 9TG <br></br> Plan your visit</p>
+                    <p style={{marginTop: '-6px'}}>Bankside</p>
+                    <p style={{marginTop: '-6px'}}>London SE1 9TG</p>
+                    <p style={{marginTop: '-6px'}}>Plan your visit</p>
                 </div>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Dates</h2>
@@ -73,7 +75,10 @@ export const Writing:FC = () => {
                 </div>
                 <div style={{boxSizing:'border-box', padding: styles.sideBarBoxPadding, borderBottom: '3px dotted #EBE7E6', width: '90%'}}>
                     <h2 style={{fontWeight: '400', marginLeft: '-7px', marginTop: '0px'}}>Pricing</h2>
-                    <p style={{marginTop: '-6px', marginBottom:'20px'}}>£16 / Free for members<br></br><br></br>Concessions available<br></br><br></br>£5 for Tate Collective. 16-25? Sign up and log in to book <br></br><br></br>See Booking and Ticketing FAQs<br></br></p>
+                    <p style={{marginTop: '-6px'}}>£16 / Free for members</p>
+                    <p style={{marginTop: '-6px'}}>Concessions available</p>
+                    <p style={{marginTop: '-6px'}}>£5 for Tate Collective. 16-25? Sign up and log in to book</p>
+                    <p style={{marginTop: '-6px'}}>See Booking and Ticketing FAQs</p>
                     <a href={'/works'} style={{display: 'inline-block', boxSizing:'border-box', padding:'14px 17px', color:'#f2f2f2', backgroundColor: '#DB2D04', cursor:'pointer', textDecoration:'none', fontWeight: '600', marginBottom: '20px'}}>Take a look at my work</a>
                 </div>
             </div>
