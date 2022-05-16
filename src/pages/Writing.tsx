@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
-import { WritingPageValues } from '../services/works'
+import { writing } from '../services/works'
 import useIsMobile from '../services/useIsMobile'
 
 
@@ -32,7 +32,7 @@ const desktopStyles = {
     sideBarBoxPadding: '10px 0px 0px 15px'
 }
 
-export const Writing:FC<{writingPageValues: WritingPageValues}> = ({writingPageValues}) => {
+export const Writing:FC<{writingPageValues: writing}> = ({writingPageValues}) => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
@@ -41,7 +41,7 @@ export const Writing:FC<{writingPageValues: WritingPageValues}> = ({writingPageV
         <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
             <div style={{gridColumn: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start'}}>
                 <h1 style={{margin: styles.headingMargin}}>
-                {writingPageValues.writingHeading}
+                {writingPageValues.heading}
                 </h1>
                 {writingPageValues.paragraphs.map(x => {
                     return <p style={{marginTop: '0px'}}>{x}</p>
