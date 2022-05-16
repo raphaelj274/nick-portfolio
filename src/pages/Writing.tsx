@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
-import { writing } from '../services/works'
+import { WritingContent } from '../services/works'
 import useIsMobile from '../services/useIsMobile'
 
 
@@ -32,7 +32,7 @@ const desktopStyles = {
     sideBarBoxPadding: '10px 0px 0px 15px'
 }
 
-export const Writing:FC<{writingPageValues: writing}> = ({writingPageValues}) => {
+export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
@@ -41,16 +41,16 @@ export const Writing:FC<{writingPageValues: writing}> = ({writingPageValues}) =>
         <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
             <div style={{gridColumn: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start'}}>
                 <h1 style={{margin: styles.headingMargin}}>
-                {writingPageValues.heading}
+                {writingContent.heading}
                 </h1>
-                {writingPageValues.paragraphs.map(x => {
+                {writingContent.paragraphs.map(x => {
                     return <p style={{marginTop: '0px'}}>{x}</p>
                 })}
                 <p style={{marginTop: '0px'}}>
-                <i>{writingPageValues.italicText}</i>
+                <i>{writingContent.italicText}</i>
                 </p>
                 <div style={{width: '78%'}} id={'img'}>
-                    <img style={{marginTop: '20px', width: '100%'}} src={writingPageValues.image} alt={writingPageValues.imageAltText}></img>
+                    <img style={{marginTop: '20px', width: '100%'}} src={writingContent.image} alt={writingContent.imageAltText}></img>
                     <figcaption style={{boxSizing:'border-box', backgroundColor: '#f2f2f2', width: '100%', color: '#808080', marginTop: '-4px', padding: '4px 4px'}}>Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid</figcaption>
                 </div>
             </div>
