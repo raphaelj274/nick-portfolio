@@ -36,9 +36,6 @@ export const Writing:FC = () => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    // Ignore the line below - this is to demonstrate something later
-    // const alignment = useIsMobile() ? 'center' : 'left'
-
     return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
         <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment!, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
