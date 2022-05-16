@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
-import { writingPageValues } from '../services/works'
+import { WritingPageValues } from '../services/works'
 import useIsMobile from '../services/useIsMobile'
 
 
@@ -32,7 +32,7 @@ const desktopStyles = {
     sideBarBoxPadding: '10px 0px 0px 15px'
 }
 
-export const Writing:FC = () => {
+export const Writing:FC<{writingPageValues: WritingPageValues}> = ({writingPageValues}) => {
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 

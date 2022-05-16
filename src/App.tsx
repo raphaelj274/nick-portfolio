@@ -3,20 +3,21 @@ import { Entry } from './pages/Entry';
 import { BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 import { Contact } from './pages/Contact';
-import { works } from './services/works'
+import { works } from './services/works';
 import { Works } from './pages/Works';
+import { writingPageValues } from './services/works';
 import { Writing } from './pages/Writing';
 import { Shop } from './pages/Shop';
 import { Project } from './pages/Project';
 
 const App = () => {
   return (
-    <Router>  
+    <Router>
       <Routes>
         <Route path='/' element={<Entry/>}/>
         <Route path='/home' element={<Home works={works}/>}/>
         <Route path='/works' element={<Works works={works}/>}/>
-        <Route path='/writing' element={<Writing/>}/>
+        <Route path='/writing' element={<Writing writingPageValues={writingPageValues}/>}/>
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/project/:id' element={<Project works={works}/>}/>
