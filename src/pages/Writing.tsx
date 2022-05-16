@@ -11,7 +11,7 @@ const mobileStyles = {
     sideBarGridColumn: '1',
     gridMargins: '0 auto auto auto',
     gridMaxWidth: '90%',
-    headingMargin : '0',
+    headingMargin : '0 0 23px 0',
     sideBarTopMargin: '0',
     sideBarTopBorder: '3px dotted #EBE7E6',
     sideBarFlexAlignment: 'center',
@@ -38,13 +38,13 @@ export const Writing:FC = () => {
 
     return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
-        <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment!, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
+        <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment, margin: styles.gridMargins, display: 'grid', gridGap: styles.gridGap, gridTemplateColumns: styles.gridTemplateColumns}}>
             <div style={{gridColumn: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start'}}>
                 <h1 style={{margin: styles.headingMargin}}>
                 {writingPageValues.writingHeading}
                 </h1>
                 {writingPageValues.paragraphs.map(x => {
-                    return <p style={{textAlign: 'left', marginTop: '0px'}}>{x}</p>
+                    return <p style={{marginTop: '0px'}}>{x}</p>
                 })}
                 <p style={{marginTop: '0px'}}>
                 <i>{writingPageValues.italicText}</i>
