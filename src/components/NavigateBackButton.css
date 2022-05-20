@@ -9,3 +9,8 @@
   left: 19.5vw;
   transition: left 0.4s;
 }
+
+#mobile-button {
+  margin-top: 30px;
+}
+
