@@ -10,10 +10,9 @@ const mobileStyles = {
     bodyPadding: '0 10vw 0 10vw',
     paragraphMaxWidth: 'initial',
     gap: 20,
-    paddingTop: 10,
+    paddingTop: 0,
     fontSize: '0.85rem',
     subheadingTopMargin: '-15px'
-
 }
 
 const desktopStyles = {
