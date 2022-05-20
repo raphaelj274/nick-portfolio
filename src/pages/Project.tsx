@@ -12,7 +12,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
     const navigate = useNavigate();
     return <div>
         <FontAwesomeIcon icon={faArrowLeftLong} size='2x' style={{position: 'fixed', top: 68, left: 200, cursor: 'pointer'}} onClick={() => {
-        navigate('/home')
+        navigate(-1);
         window.scrollTo(0, 0);
         }}/>
         <div style={{width: '60%', display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: 60, paddingTop: 40 }}>
