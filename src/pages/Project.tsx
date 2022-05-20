@@ -1,20 +1,14 @@
-import {FC, useState} from 'react'
-import { Navigate, useParams } from 'react-router-dom'
-import { RelatedImage, Work } from '../services/works'
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+import {FC, useState} from 'react';
+import { Navigate, useParams, unstable_HistoryRouter } from 'react-router-dom';
+import { RelatedImage, Work } from '../services/works';
+import { NavigateBackButton } from '../components/NavigateBackButton'
 
 const ProjectContent: FC<{work: Work}> = ({work}) => {
     const workAsRelated: RelatedImage = {image: work.image, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
     const carousel = [{image: work.image, caption: work.caption}, ...work.relatedImages]
-    const navigate = useNavigate();
     return <div>
-        <FontAwesomeIcon icon={faArrowLeftLong} size='2x' style={{position: 'fixed', top: 68, left: 200, cursor: 'pointer'}} onClick={() => {
-        navigate(-1);
-        window.scrollTo(0, 0);
-        }}/>
+        <NavigateBackButton/>
         <div style={{width: '60%', display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: 60, paddingTop: 40 }}>
             <div>
                 <h1>{work.id.toUpperCase()}</h1>

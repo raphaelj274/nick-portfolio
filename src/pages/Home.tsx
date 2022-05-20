@@ -5,12 +5,10 @@ import { NavBar } from '../components/NavBar'
 import useIsMobile from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom';
 
-export const prevState = 'home'
-
-
 const ImageContainer:FC<{work: Work}> = ({work}) => {
     const navigate = useNavigate();
     const onClick = () => {
+
         navigate(`/project/${work.id}`)
         window.scrollTo(0, 0)
     }
