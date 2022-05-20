@@ -1,5 +1,5 @@
 import {FC, useState} from 'react';
-import { Navigate, useParams, unstable_HistoryRouter } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { RelatedImage, Work } from '../services/works';
 import { NavigateBackButton } from '../components/NavigateBackButton'
 
