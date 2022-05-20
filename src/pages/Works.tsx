@@ -8,7 +8,7 @@ import StackGrid from "react-stack-grid";
 const ContactElement:FC<{work: Work}> = ({work}) => {
     const navigate = useNavigate();
     const onClick = () => {
-        navigate(`/project/${work.id}`);
+        navigate(`/project/${work.id}`, { state: 'works' })
         window.scrollTo(0, 0);
     }
     return <div style={{padding: 3}} onClick={onClick}>
