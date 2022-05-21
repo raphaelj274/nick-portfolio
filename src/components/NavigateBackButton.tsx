@@ -7,27 +7,22 @@ import scrollToHash from '../services/scrollToHash';
 
 export interface StateType {
   previousPage: string,
-  selectedProject: string
 }
 
 export const NavigateBackButton: FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const project = location.pathname.match(/[^/]+$/g)![0]
     const state = location.state as StateType
-    const project = state ? state.selectedProject : null
 
     return <div>
     <FontAwesomeIcon id='button' icon={faArrowLeftLong} size='2x' onClick={() => {
         if (state && state.previousPage === 'works') {
-          navigate('/works', { state: {previousPage: 'project', selectedProject: null} })
-        }
-        else if (state && project) {
-          navigate('/home', { state: {previousPage: 'project', selectedProject: null} })
-          scrollToHash(project)
+          navigate('/works', { state: {previousPage: 'project'} })
         }
         else {
-          navigate('/home')
-          window.scrollTo(0,0)
+          navigate('/home');
+          scrollToHash(project)
         }
         }}/>
     </div>
