@@ -10,7 +10,6 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
 
     const location = useLocation()
     const state = location.state as StateType
-
     if (!state || state.previousPage !== 'project') window.scrollTo(0, 0)
 
     const navigate = useNavigate();
@@ -43,7 +42,3 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
         </div>
     </div>
 }
-
-
-
-

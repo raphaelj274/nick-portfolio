@@ -28,4 +28,3 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
             </StackGrid>
     </div>
 }
-

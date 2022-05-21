@@ -86,4 +86,3 @@ export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) =
         </div>
     </div>
 }
-
