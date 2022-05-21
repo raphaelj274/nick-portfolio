@@ -5,17 +5,24 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import './NavigateBackButton.css'
 import useIsMobile from '../services/useIsMobile'
 
+interface StateType {
+  previousPage: string
+}
 
 export const NavigateBackButton: FC = () => {
     const navigate = useNavigate();
     const id = useIsMobile() ? 'mobile-button' : 'button'
-    let location = useLocation();
+    const location = useLocation();
+    const state = location.state as StateType
+
+    console.log(location)
+    console.log('hello')
 
     return <div>
     <FontAwesomeIcon id={id} icon={faArrowLeftLong} size='2x' onClick={() => {
-        if (location.state === 'works') navigate('/works')
-        else navigate('/home')
-        window.scrollTo(0, 0);
+        if (state === null || state.previousPage !== 'works') navigate('/home')
+        else navigate('/works')
+        window.scrollTo(0, 0)
         }}/>
     </div>
 }

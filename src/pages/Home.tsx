@@ -9,7 +9,7 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
     const navigate = useNavigate();
     const onClick = () => {
 
-        navigate(`/project/${work.id}`)
+        navigate(`/project/${work.id}`, { state: {previousPage: 'home'} })
         window.scrollTo(0, 0)
     }
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'
@@ -39,3 +39,4 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
     </div>
 
 }
+
