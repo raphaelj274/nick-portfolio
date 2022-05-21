@@ -1,9 +1,9 @@
 import {FC, useState} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { RelatedImage, Work } from '../services/works';
+import { NavBar } from '../components/NavBar'
 import { NavigateBackButton } from '../components/NavigateBackButton'
 import useIsMobile from '../services/useIsMobile'
-
 
 const mobileStyles = {
     width: '92%',
@@ -33,7 +33,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
     const carousel = [{image: work.image, caption: work.caption}, ...work.relatedImages]
     return <div>
-        <NavigateBackButton />
+        {useIsMobile() ? <NavBar /> :  <NavigateBackButton /> }
         <div style={{width: styles.width, display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: styles.gap, paddingTop: styles.paddingTop, fontSize: styles.fontSize}}>
             <div>
                 <h1>{work.id.toUpperCase()}</h1>

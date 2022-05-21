@@ -1,16 +1,12 @@
-#button {
-  position: fixed;
-  top: 68px;
-  left: 20vw;
-  cursor: pointer;
-}
+  #button {
+    position: fixed;
+    top: 68px;
+    left: 20vw;
+    cursor: pointer;
+  }
 
-#button:hover {
-  left: 19.5vw;
-  transition: left 0.4s;
-}
-
-#mobile-button {
-  margin-top: 30px;
-}
+  #button:hover {
+    left: 19.5vw;
+    transition: left 0.4s;
+  }
 
