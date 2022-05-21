@@ -33,6 +33,7 @@ const desktopStyles = {
 }
 
 export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) => {
+    window.scrollTo(0, 0)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
@@ -85,3 +86,4 @@ export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) =
         </div>
     </div>
 }
+

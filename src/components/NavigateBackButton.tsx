@@ -14,14 +14,14 @@ export const NavigateBackButton: FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const state = location.state as StateType
-    const project = state.selectedProject
+    const project = state ? state.selectedProject : null
 
     return <div>
     <FontAwesomeIcon id='button' icon={faArrowLeftLong} size='2x' onClick={() => {
         if (state && state.previousPage === 'works') {
           navigate('/works', { state: {previousPage: 'project', selectedProject: null} })
         }
-        else if (state.selectedProject) {
+        else if (state && project) {
           navigate('/home', { state: {previousPage: 'project', selectedProject: null} })
           scrollToHash(project)
         }
