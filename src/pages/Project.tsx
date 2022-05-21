@@ -6,8 +6,8 @@ import { NavigateBackButton } from '../components/NavigateBackButton'
 import useIsMobile from '../services/useIsMobile'
 
 const mobileStyles = {
-    width: '92%',
-    bodyPadding: '0 10vw 0 10vw',
+    width: '96%',
+    bodyPadding: '0 5vw 7vw 5vw',
     paragraphMaxWidth: 'initial',
     gap: 20,
     paddingTop: 0,
