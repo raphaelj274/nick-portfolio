@@ -3,21 +3,32 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import './NavigateBackButton.css'
+import scrollToHash from '../services/scrollToHash';
 
-interface StateType {
-  previousPage: string
+export interface StateType {
+  previousPage: string,
+  selectedProject: string
 }
 
 export const NavigateBackButton: FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const state = location.state as StateType
+    const project = state.selectedProject
 
     return <div>
     <FontAwesomeIcon id='button' icon={faArrowLeftLong} size='2x' onClick={() => {
-        if (state === null || state.previousPage !== 'works') navigate('/home')
-        else navigate('/works')
-        window.scrollTo(0, 0)
+        if (state && state.previousPage === 'works') {
+          navigate('/works', { state: {previousPage: 'project', selectedProject: null} })
+        }
+        else if (state.selectedProject) {
+          navigate('/home', { state: {previousPage: 'project', selectedProject: null} })
+          scrollToHash(project)
+        }
+        else {
+          navigate('/home')
+          window.scrollTo(0,0)
+        }
         }}/>
     </div>
 }

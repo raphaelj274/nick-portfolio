@@ -28,6 +28,7 @@ const desktopStyles = {
 
 const ProjectContent: FC<{work: Work}> = ({work}) => {
 
+    window.scrollTo(0, 0)
     const styles = useIsMobile() ? mobileStyles : desktopStyles
     const workAsRelated: RelatedImage = {image: work.image, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)

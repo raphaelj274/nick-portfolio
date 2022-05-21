@@ -6,14 +6,13 @@ import useIsMobile from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom';
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
+
     const navigate = useNavigate();
     const onClick = () => {
-
-        navigate(`/project/${work.id}`, { state: {previousPage: 'home'} })
-        window.scrollTo(0, 0)
+        navigate(`/project/${work.id}`, { state: {previousPage: 'home', selectedProject: work.id} })
     }
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'
-    return  <div style={{display: 'grid', gridTemplateColumns: gridTemplateColumns, width: '100%' }}>
+    return  <div id={work.id} style={{display: 'grid', gridTemplateColumns: gridTemplateColumns, width: '100%' }}>
                 <div style={{gridColumnStart: 2, gridColumnEnd: 3}} onClick={onClick}>
                     <img src={work.image} width={'100%'} alt={work.alt} style={{marginBottom: -5}}/>
                 </div>
@@ -37,6 +36,6 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
             {works.map((work) => <ImageContainer work={work}/>)}
         </div>
     </div>
-
 }
+
 
