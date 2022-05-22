@@ -9,8 +9,6 @@ import { writingContent } from './services/works';
 import { Writing } from './pages/Writing';
 import { Shop } from './pages/Shop';
 import { Project } from './pages/Project';
-import { scrollToTop } from './services/scrolling';
-
 
 
 const App = () => {
