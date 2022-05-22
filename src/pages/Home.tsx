@@ -3,13 +3,18 @@ import { Work } from '../services/works'
 import { EmptyBar } from '../components/EmptyBar'
 import { NavBar } from '../components/NavBar'
 import useIsMobile from '../services/useIsMobile'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { StateType } from '../components/NavigateBackButton'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
-    window.scrollTo(0, 0)
+
+    const location = useLocation()
+    const state = location.state as StateType
+    if (!state || state.previousPage !== 'project') window.scrollTo(0, 0)
+
     const navigate = useNavigate();
     const onClick = () => {
-        navigate(`/project/${work.id}`, { state: {previousPage: 'home'} })
+        navigate(`/project/${work.id}`, { state: {previousPage: 'home', selectedProject: work.id} })
     }
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'
     return  <div id={work.id} style={{display: 'grid', gridTemplateColumns: gridTemplateColumns, width: '100%' }}>

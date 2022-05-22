@@ -4,4 +4,4 @@ const scrollToHash = (project: string) : void => {
   }, 0)
 }
 
-export default scrollToHash
+export { scrollToHash }

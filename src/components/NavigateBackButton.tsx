@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import './NavigateBackButton.css'
-import scrollToHash from '../services/scrollToHash';
+import { scrollToHash } from '../services/scrolling';
 
 export interface StateType {
   previousPage: string,
