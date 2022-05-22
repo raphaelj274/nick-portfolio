@@ -3,13 +3,13 @@ import { Work } from '../services/works'
 import { EmptyBar } from '../components/EmptyBar'
 import { NavBar } from '../components/NavBar'
 import useIsMobile from '../services/useIsMobile'
-import { useNavigate } from 'react-router-dom';
-import { scrollToTop } from '../services/scrolling';
+import { useNavigate } from 'react-router-dom'
+import { scrollToTop } from '../services/scrolling'
 
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
-    scrollToTop();
+    scrollToTop()
 
     const navigate = useNavigate();
     const onClick = () => {

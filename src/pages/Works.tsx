@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar'
 import { Work } from '../services/works'
 import StackGrid from "react-stack-grid";
+import { scrollToTop } from '../services/scrolling';
 
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
+
+    scrollToTop()
+
     const navigate = useNavigate();
     const onClick = () => {
         navigate(`/project/${work.id}`, { state: {previousPage: 'works'} })

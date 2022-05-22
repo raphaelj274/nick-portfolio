@@ -4,6 +4,7 @@ import { RelatedImage, Work } from '../services/works';
 import { NavBar } from '../components/NavBar'
 import { NavigateBackButton } from '../components/NavigateBackButton'
 import useIsMobile from '../services/useIsMobile'
+import { scrollToTop } from '../services/scrolling'
 
 const mobileStyles = {
     width: '96%',
@@ -28,7 +29,8 @@ const desktopStyles = {
 
 const ProjectContent: FC<{work: Work}> = ({work}) => {
 
-    window.scrollTo(0, 0)
+    scrollToTop()
+
     const styles = useIsMobile() ? mobileStyles : desktopStyles
     const workAsRelated: RelatedImage = {image: work.image, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
