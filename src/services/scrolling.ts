@@ -4,4 +4,12 @@ const scrollToHash = (project: string) : void => {
   }, 0)
 }
 
-export { scrollToHash }
+const scrollToTop = () : void => {
+
+  // we can modify this function in future if the scroll to top behaviour doesn't work properly...
+  // ...on certain devices - not an issue for now
+
+  window.scrollTo(0, 0)
+}
+
+export { scrollToHash, scrollToTop }
