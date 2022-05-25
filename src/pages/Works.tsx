@@ -22,8 +22,6 @@ const desktopStyles = {
     columnWidth: '33%'
 }
 
-
-
 const ContactElement:FC<{work: Work}> = ({work}) => {
 
     scrollToTop()
