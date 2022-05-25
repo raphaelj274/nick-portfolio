@@ -6,6 +6,8 @@ import StackGrid from "react-stack-grid";
 import { scrollToTop } from '../services/scrolling';
 import useIsMobile from '../services/useIsMobile';
 import { EmptyBar } from '../components/EmptyBar';
+import lowQualityShoe from '../images/concreteshoelowerquality.png'
+
 
 const mobileStyles = {
     gridMargin: '30px auto auto auto',
@@ -24,6 +26,8 @@ const desktopStyles = {
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
 
+    const image = work.id === 'concrete-shoe' ? lowQualityShoe : work.image
+
     scrollToTop()
 
     const navigate = useNavigate();
@@ -31,7 +35,7 @@ const ContactElement:FC<{work: Work}> = ({work}) => {
         navigate(`/project/${work.id}`, { state: {previousPage: 'works'} })
     }
     return <div style={{padding: 3}} onClick={onClick}>
-        <img src={work.image} width={'100%'} alt={work.alt} style={{}}/>
+        <img src={image} width={'100%'} alt={work.alt} style={{}}/>
     </div>
 }
 
