@@ -9,8 +9,6 @@ import { scrollToTop } from '../services/scrolling'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
-    scrollToTop()
-
     const navigate = useNavigate();
     const onClick = () => {
         navigate(`/project/${work.id}`, { state: {previousPage: 'home', selectedProject: work.id} })
@@ -32,6 +30,9 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
 }
 
 export const Home:FC<{works: Array<Work>}> = ({works}) => {
+
+    scrollToTop()
+
     const marginTop = useIsMobile() ? '0px' : '100px'
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
