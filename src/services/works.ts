@@ -40,7 +40,7 @@ const concreteShoeD: RelatedImage = {
 }
 
 const concreteShoe: Work = {
-    id: 'concrete shoe',
+    id: 'concrete-shoe',
     image: concretePng,
     imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",

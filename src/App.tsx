@@ -10,6 +10,7 @@ import { Writing } from './pages/Writing';
 import { Shop } from './pages/Shop';
 import { Project } from './pages/Project';
 
+
 const App = () => {
   return (
     <Router>

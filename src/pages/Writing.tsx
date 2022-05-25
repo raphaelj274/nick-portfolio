@@ -2,6 +2,7 @@ import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
 import { WritingContent } from '../services/works'
 import useIsMobile from '../services/useIsMobile'
+import { scrollToTop } from '../services/scrolling'
 
 
 const mobileStyles = {
@@ -33,6 +34,8 @@ const desktopStyles = {
 }
 
 export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) => {
+
+    scrollToTop()
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
