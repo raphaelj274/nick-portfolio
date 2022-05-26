@@ -10,8 +10,21 @@ import { Writing } from './pages/Writing';
 import { Shop } from './pages/Shop';
 import { Project } from './pages/Project';
 
-
 const App = () => {
+
+  //Preload images
+  const imgArr = works.map((work) => work.image)
+  const backupImgArr = works.filter((work) => work.backupImage).map((work) => work.backupImage)
+  imgArr.push(...backupImgArr)
+  const preload = () => {
+      imgArr.forEach((picture) => {
+      const img = new Image();
+      img.src = picture;
+      });
+  }
+  preload()
+
+
   return (
     <Router>
       <Routes>

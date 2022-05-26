@@ -36,17 +36,6 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
 
     const marginTop = useIsMobile() ? '0px' : '100px'
 
-    //Preload images
-    const imgArr = works.map((work) => work.image)
-    console.log(imgArr)
-    const preload = () => {
-        imgArr.forEach((picture) => {
-        const img = new Image();
-        img.src = picture;
-        });
-    }
-    preload()
-
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
@@ -56,6 +45,5 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
     </div>
 }
 
-// Preload images
 
 
