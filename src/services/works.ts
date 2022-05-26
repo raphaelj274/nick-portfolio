@@ -4,11 +4,14 @@ import sculptureC from '../images/fields.jpeg'
 import sculptureD from  '../images/spoon.jpeg'
 import sculptureE from  '../images/portrait.jpeg'
 import writingPageImage from '../images/tateimage.jpg'
+import shoeBackupImage from '../images/concreteshoelowerquality.png'
+import linoBackupImage from '../images/linolowerquality.png'
 
 
 export interface Work {
     id: string,
     image: string,
+    backupImage: string,
     alt: string,
     date: string,
     caption: string
@@ -42,6 +45,7 @@ const concreteShoeD: RelatedImage = {
 const concreteShoe: Work = {
     id: 'concrete-shoe',
     image: concretePng,
+    backupImage: shoeBackupImage,
     imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",
     date: "Granpa's Slippers, 2022" ,
@@ -49,9 +53,11 @@ const concreteShoe: Work = {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     relatedImages: [concreteShoeA, concreteShoeB, concreteShoeC, concreteShoeD]
 }
+
 const lino: Work = {
     id: 'lino',
     image: linopng,
+    backupImage: linoBackupImage,
     imageCaption: 'Scultpure on beach',
     alt: "Nick's sculpture",
     date: "Untitled, Lino 2022",
@@ -59,29 +65,35 @@ const lino: Work = {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     relatedImages: [concreteShoeA, concreteShoeB, concreteShoeC, concreteShoeD]
 }
+
 const fields: Work = {
     id: 'fields',
     imageCaption: 'Final sculpture',
     image: sculptureC,
+    backupImage: '',
     alt: "Nick's sculpture",
     date: 'Pow 2022',
     caption: 'Lincoln\'s Inn, Somerset',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     relatedImages: [concreteShoeA, concreteShoeB, concreteShoeC, concreteShoeD]
 }
+
 const spoon: Work = {
     id: 'spoon',
     imageCaption: 'Final sculpture',
     image: sculptureD,
+    backupImage: '',
     alt: "Nick's sculpture",
     date: 'Boom 2020',
     caption: 'Big spoon, Toronto',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     relatedImages: [concreteShoeA, concreteShoeB, concreteShoeC, concreteShoeD]
 }
+
 const portait: Work = {
     id: 'portrait',
     image: sculptureE,
+    backupImage: '',
     imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",
     date: 'Portrait of a mother 2020',

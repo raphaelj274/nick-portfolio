@@ -6,7 +6,6 @@ import StackGrid from "react-stack-grid";
 import { scrollToTop } from '../services/scrolling';
 import useIsMobile from '../services/useIsMobile';
 import { EmptyBar } from '../components/EmptyBar';
-import lowQualityShoe from '../images/concreteshoelowerquality.png'
 
 
 const mobileStyles = {
@@ -26,7 +25,7 @@ const desktopStyles = {
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
 
-    const image = work.id === 'concrete-shoe' ? lowQualityShoe : work.image
+    const image = work.backupImage ? work.backupImage : work.image
 
     scrollToTop()
 

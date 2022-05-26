@@ -5,11 +5,10 @@ import { NavBar } from '../components/NavBar'
 import useIsMobile from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom'
 import { scrollToTop } from '../services/scrolling'
-import lowQualityShoe from '../images/concreteshoelowerquality.png'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
-    const image = work.id === 'concrete-shoe' ? lowQualityShoe : work.image
+    const image = work.backupImage ? work.backupImage : work.image
 
     const navigate = useNavigate();
     const onClick = () => {
@@ -36,6 +35,18 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
     scrollToTop()
 
     const marginTop = useIsMobile() ? '0px' : '100px'
+
+    //Preload images
+    const imgArr = works.map((work) => work.image)
+    console.log(imgArr)
+    const preload = () => {
+        imgArr.forEach((picture) => {
+        const img = new Image();
+        img.src = picture;
+        });
+    }
+    preload()
+
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
@@ -44,3 +55,7 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
         </div>
     </div>
 }
+
+// Preload images
+
+
