@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import {FC, useState, useEffect} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { RelatedImage, Work } from '../services/works';
 import { NavBar } from '../components/NavBar'
@@ -31,10 +31,32 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
 
     scrollToTop()
 
+    const useProgressiveImage = (src: string) => {
+        const [sourceLoaded, setSourceLoaded] = useState<string | null>(null)
+        useEffect(() => {
+          const img = new Image()
+          img.src = src
+          img.onload = () => setSourceLoaded(src)
+        }, [src])
+        return sourceLoaded
+      }
+
+      const source = work.image
+      const placeholder = work.backupImage
+      const loaded = useProgressiveImage(source)
+
+    //   const Component = (source: string, placeholder: string) => {
+    //     const loaded = useProgressiveImage(source)
+
+    //     return (
+    //       <div style={{ backgroundImage: `url(${loaded || placeholder})` }} />
+    //     )
+    //   }
+
     const styles = useIsMobile() ? mobileStyles : desktopStyles
-    const workAsRelated: RelatedImage = {image: work.image, caption: work.imageCaption}
+    const workAsRelated: RelatedImage = {image: loaded || placeholder, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
-    const carousel = [{image: work.image, caption: work.caption}, ...work.relatedImages]
+    const carousel = [{image: loaded || placeholder, caption: work.caption}, ...work.relatedImages]
     return <div>
         {useIsMobile() ? <NavBar /> :  <NavigateBackButton /> }
         <div style={{width: styles.width, display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: styles.gap, paddingTop: styles.paddingTop, fontSize: styles.fontSize}}>
