@@ -5,6 +5,7 @@ import { NavBar } from '../components/NavBar'
 import { NavigateBackButton } from '../components/NavigateBackButton'
 import useIsMobile from '../services/useIsMobile'
 import { scrollToTop } from '../services/scrolling'
+import ProgressiveImage from '../components/ProgressiveImage';
 
 const mobileStyles = {
     width: '96%',
@@ -31,32 +32,10 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
 
     scrollToTop()
 
-    const useProgressiveImage = (src: string) => {
-        const [sourceLoaded, setSourceLoaded] = useState<string | null>(null)
-        useEffect(() => {
-          const img = new Image()
-          img.src = src
-          img.onload = () => setSourceLoaded(src)
-        }, [src])
-        return sourceLoaded
-      }
-
-      const source = work.image
-      const placeholder = work.backupImage
-      const loaded = useProgressiveImage(source)
-
-    //   const Component = (source: string, placeholder: string) => {
-    //     const loaded = useProgressiveImage(source)
-
-    //     return (
-    //       <div style={{ backgroundImage: `url(${loaded || placeholder})` }} />
-    //     )
-    //   }
-
     const styles = useIsMobile() ? mobileStyles : desktopStyles
-    const workAsRelated: RelatedImage = {image: loaded || placeholder, caption: work.imageCaption}
+    const workAsRelated: RelatedImage = {image: work.image, backupImage: work.backupImage, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
-    const carousel = [{image: loaded || placeholder, caption: work.caption}, ...work.relatedImages]
+    const carousel = [{image: work.image, backupImage: work.backupImage, caption: work.caption}, ...work.relatedImages]
     return <div>
         {useIsMobile() ? <NavBar /> :  <NavigateBackButton /> }
         <div style={{width: styles.width, display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: styles.gap, paddingTop: styles.paddingTop, fontSize: styles.fontSize}}>
@@ -65,10 +44,11 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
                 <p style={{marginTop: styles.subheadingTopMargin}}>{work.caption}</p>
             </div>
             <div style={{maxWidth: styles.width, padding: styles.bodyPadding}} >
-                <img src={currentImage.image} alt={currentImage.caption} width={'100%'} style={{}}/>
+                <ProgressiveImage src={work.image} placeholder={work.backupImage} width={'100%'} alt={currentImage.caption} main={true}/>
                 <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
                 <div style={{display: 'flex', marginTop: '20px'}}>
-                    {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => setCurrentImage(related)}/>)}
+                    {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => setCurrentImage(related)}/>)}
+                    {/* {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => setCurrentImage(related)}/>)} */}
                 </div>
             </div>
             <p style={{padding: styles.bodyPadding, maxWidth: styles.paragraphMaxWidth, fontSize: 'small'}}>{work.description}</p>

@@ -1,11 +1,14 @@
 import concretePng from '../images/concreteshoe.png'
 import linopng from '../images/lino.png'
-import sculptureC from '../images/fields.jpeg'
-import sculptureD from  '../images/spoon.jpeg'
-import sculptureE from  '../images/portrait.jpeg'
+import fieldsImage from '../images/fields.jpeg'
+import spoonImage from  '../images/spoon.jpeg'
+import portraitImage from  '../images/portrait.jpeg'
 import writingPageImage from '../images/tateimage.jpg'
 import shoeBackupImage from '../images/concreteshoelowerquality.png'
 import linoBackupImage from '../images/linolowerquality.png'
+import fieldsBackupImage from '../images/fieldslowerquality.png'
+import spoonBackupImage from '../images/spoonlowerquality.png'
+import portraitBackupImage from '../images/portraitlowerquality.png'
 
 
 export interface Work {
@@ -22,23 +25,28 @@ export interface Work {
 
 export interface RelatedImage {
     image: string,
+    backupImage: string,
     caption: string
 }
 
 const concreteShoeA: RelatedImage = {
-    image: sculptureC,
+    image: fieldsImage,
+    backupImage: fieldsBackupImage,
     caption: 'Figure A'
 }
 const concreteShoeB: RelatedImage = {
-    image: sculptureD,
+    image: spoonImage,
+    backupImage: spoonBackupImage,
     caption: 'Figure B'
 }
 const concreteShoeC: RelatedImage = {
-    image: sculptureE,
+    image: portraitImage,
+    backupImage: portraitBackupImage,
     caption: 'Figure C'
 }
 const concreteShoeD: RelatedImage = {
     image: linopng,
+    backupImage: linoBackupImage,
     caption: 'Figure D'
 }
 
@@ -58,7 +66,7 @@ const lino: Work = {
     id: 'lino',
     image: linopng,
     backupImage: linoBackupImage,
-    imageCaption: 'Scultpure on beach',
+    imageCaption: 'Sculpture on beach',
     alt: "Nick's sculpture",
     date: "Untitled, Lino 2022",
     caption: 'Sacre-Bleu, France',
@@ -69,8 +77,8 @@ const lino: Work = {
 const fields: Work = {
     id: 'fields',
     imageCaption: 'Final sculpture',
-    image: sculptureC,
-    backupImage: '',
+    image: fieldsImage,
+    backupImage: fieldsBackupImage,
     alt: "Nick's sculpture",
     date: 'Pow 2022',
     caption: 'Lincoln\'s Inn, Somerset',
@@ -81,8 +89,8 @@ const fields: Work = {
 const spoon: Work = {
     id: 'spoon',
     imageCaption: 'Final sculpture',
-    image: sculptureD,
-    backupImage: '',
+    image: spoonImage,
+    backupImage: spoonBackupImage,
     alt: "Nick's sculpture",
     date: 'Boom 2020',
     caption: 'Big spoon, Toronto',
@@ -92,8 +100,8 @@ const spoon: Work = {
 
 const portait: Work = {
     id: 'portrait',
-    image: sculptureE,
-    backupImage: '',
+    image: portraitImage,
+    backupImage: portraitBackupImage,
     imageCaption: 'Final sculpture',
     alt: "Nick's sculpture",
     date: 'Portrait of a mother 2020',
