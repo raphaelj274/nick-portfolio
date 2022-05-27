@@ -9,7 +9,7 @@ import { scrollToTop } from '../services/scrolling'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
-    const image = work.backupImage ? work.backupImage : work.image
+    const image = work.backupImage || work.image
 
     const navigate = useNavigate();
     const onClick = () => {

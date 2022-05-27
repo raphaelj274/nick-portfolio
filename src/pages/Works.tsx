@@ -25,7 +25,7 @@ const desktopStyles = {
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
 
-    const image = work.backupImage ? work.backupImage : work.image
+    const image = work.backupImage || work.image
 
     scrollToTop()
 
