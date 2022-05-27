@@ -1,4 +1,4 @@
-import {FC, useState, useEffect} from 'react';
+import {FC, useState} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { RelatedImage, Work } from '../services/works';
 import { NavBar } from '../components/NavBar'
@@ -59,7 +59,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
 export const Project:FC<{works: Array<Work>}> = ({works}) => {
     const {id: projectId }= useParams<{id: string}>()
     const work = works.find(work => work.id === projectId)
-    return <div style={{width: '100vw', height: ''}}>
+    return <div style={{width: '100vw', maxWidth:'100%', height: ''}}>
          <div style={{width: '100%', textAlign: 'center', height: '40%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             {work && <ProjectContent work={work} />}
             {!work && <Navigate replace to="/home" />}

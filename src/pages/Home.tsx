@@ -6,6 +6,7 @@ import useIsMobile from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom'
 import { scrollToTop } from '../services/scrolling'
 
+
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
     const image = work.backupImage ? work.backupImage : work.image
