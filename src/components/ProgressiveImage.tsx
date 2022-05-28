@@ -1,12 +1,25 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
-class ProgressiveImage extends Component {
+export interface ProgressiveImageProps {
+  src: string,
+  placeholder: string,
+  alt: string,
+  width?: string,
+  main: boolean
+  onClick?: Function
+}
+
+export interface ProgressiveImageState {
+  loading: boolean,
+  currentSrc: string
+}
+
+class ProgressiveImage extends Component<ProgressiveImageProps, ProgressiveImageState> {
   static defaultProps = {
     alt: ""
   };
 
-  constructor(props) {
+  constructor(props: ProgressiveImageProps) {
     super(props);
     // initially set loading to true and current src of image to placeholder image
     this.state = {
@@ -50,14 +63,5 @@ class ProgressiveImage extends Component {
     );
   }
 }
-
-ProgressiveImage.propTypes = {
-  main: PropTypes.bool.isRequired,
-  src: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired
-};
-
-
 
 export default ProgressiveImage;
