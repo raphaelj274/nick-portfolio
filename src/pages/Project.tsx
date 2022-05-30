@@ -35,6 +35,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
     const styles = useIsMobile() ? mobileStyles : desktopStyles
     const workAsRelated: RelatedImage = {image: work.image, backupImage: work.backupImage, caption: work.imageCaption}
     const [currentImage, setCurrentImage] = useState<RelatedImage>(workAsRelated)
+    const [currentKey, setCurrentKey] = useState<number>(1)
     const carousel = [{image: work.image, backupImage: work.backupImage, caption: work.caption}, ...work.relatedImages]
     return <div>
         {useIsMobile() ? <NavBar /> :  <NavigateBackButton /> }
@@ -44,11 +45,14 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
                 <p style={{marginTop: styles.subheadingTopMargin}}>{work.caption}</p>
             </div>
             <div style={{maxWidth: styles.width, padding: styles.bodyPadding}} >
-                <ProgressiveImage src={work.image} placeholder={work.backupImage} width={'100%'} alt={currentImage.caption} main={true}/>
+                <ProgressiveImage src={currentImage.image} placeholder={currentImage.backupImage} width={'100%'} alt={currentImage.caption} main={true} key={currentKey} />
                 <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
                 <div style={{display: 'flex', marginTop: '20px'}}>
-                    {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => setCurrentImage(related)}/>)}
-                    {/* {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => setCurrentImage(related)}/>)} */}
+                    {/* {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => setCurrentImage(related)}/>)} */}
+                    {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => {
+                        setCurrentImage(related)
+                        setCurrentKey(currentKey + 1)
+                        }}/>)}
                 </div>
             </div>
             <p style={{padding: styles.bodyPadding, maxWidth: styles.paragraphMaxWidth, fontSize: 'small'}}>{work.description}</p>
