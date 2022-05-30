@@ -7,6 +7,7 @@ import { scrollToTop } from '../services/scrolling';
 import useIsMobile from '../services/useIsMobile';
 import { EmptyBar } from '../components/EmptyBar';
 
+
 const mobileStyles = {
     gridMargin: '30px auto auto auto',
     width: '95%',
@@ -24,6 +25,8 @@ const desktopStyles = {
 
 const ContactElement:FC<{work: Work}> = ({work}) => {
 
+    const image = work.backupImage || work.image
+
     scrollToTop()
 
     const navigate = useNavigate();
@@ -31,7 +34,7 @@ const ContactElement:FC<{work: Work}> = ({work}) => {
         navigate(`/project/${work.id}`, { state: {previousPage: 'works'} })
     }
     return <div style={{padding: 3}} onClick={onClick}>
-        <img src={work.image} width={'100%'} alt={work.alt} style={{}}/>
+        <img src={image} width={'100%'} alt={work.alt} style={{}}/>
     </div>
 }
 

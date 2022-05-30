@@ -9,6 +9,8 @@ import { scrollToTop } from '../services/scrolling'
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
 
+    const image = work.backupImage || work.image
+
     const navigate = useNavigate();
     const onClick = () => {
         navigate(`/project/${work.id}`, { state: {previousPage: 'home', selectedProject: work.id} })
@@ -16,7 +18,7 @@ const ImageContainer:FC<{work: Work}> = ({work}) => {
     const gridTemplateColumns = useIsMobile() ? '1fr 16fr 1fr' : '1fr 1fr 1fr'
     return  <div id={work.id} style={{display: 'grid', gridTemplateColumns: gridTemplateColumns, width: '100%' }}>
                 <div style={{gridColumnStart: 2, gridColumnEnd: 3}} onClick={onClick}>
-                    <img src={work.image} width={'100%'} alt={work.alt} style={{marginBottom: -5}}/>
+                    <img src={image} width={'100%'} alt={work.alt} style={{marginBottom: -5}}/>
                 </div>
                 {!useIsMobile() && <div style={{gridColumnStart: 3, gridColumnEnd: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',  marginLeft: '15px', fontSize: 'small', fontStyle:'italic'}}>
                     <p style={{margin: '0', fontWeight: 'bold'}}>
@@ -34,6 +36,7 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
     scrollToTop()
 
     const marginTop = useIsMobile() ? '0px' : '100px'
+
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
@@ -42,3 +45,6 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
         </div>
     </div>
 }
+
+
+
