@@ -48,8 +48,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
                 <ProgressiveImage src={currentImage.image} placeholder={currentImage.backupImage} width={'100%'} alt={currentImage.caption} main={true} key={currentKey} />
                 <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
                 <div style={{display: 'flex', marginTop: '20px'}}>
-                    {/* {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => setCurrentImage(related)}/>)} */}
-                    {carousel.map(related => <img src={related.image} alt={related.caption} style={{width: '20%', objectFit: 'cover'}} onClick={() => {
+                    {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => {
                         setCurrentImage(related)
                         setCurrentKey(currentKey + 1)
                         }}/>)}

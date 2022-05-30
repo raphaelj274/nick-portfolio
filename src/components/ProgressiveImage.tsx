@@ -40,7 +40,7 @@ class ProgressiveImage extends Component<ProgressiveImageProps, ProgressiveImage
 
   render() {
     const { currentSrc, loading } = this.state;
-    const { alt, width, main } = this.props;
+    const { alt, width, main, onClick } = this.props;
     const relatedStyles = {
       opacity: loading ? 0.5 : 1,
       transition: "opacity .15s linear",
@@ -59,6 +59,10 @@ class ProgressiveImage extends Component<ProgressiveImageProps, ProgressiveImage
         style={main ? mainStyles : relatedStyles}
         alt={alt}
         width={width}
+        onClick={() => {
+          onClick && onClick()
+          }
+          }
       />
     );
   }
