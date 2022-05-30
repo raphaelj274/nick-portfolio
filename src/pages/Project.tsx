@@ -38,7 +38,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
     const [currentKey, setCurrentKey] = useState<number>(1)
     const carousel = [{image: work.image, backupImage: work.backupImage, caption: work.caption}, ...work.relatedImages]
     return <div>
-        {useIsMobile() ? <NavBar /> :  <NavigateBackButton /> }
+        {useIsMobile() ? <NavBar /> : <NavigateBackButton /> }
         <div style={{width: styles.width, display: "inline-flex", flexDirection: "column", alignItems: 'center', gap: styles.gap, paddingTop: styles.paddingTop, fontSize: styles.fontSize}}>
             <div>
                 <h1>{work.id.toUpperCase()}</h1>
