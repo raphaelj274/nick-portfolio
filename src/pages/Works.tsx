@@ -43,13 +43,9 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     const [workState, setWorkState] = useState(0)
 
-    const rerenderStackGrid = () => {
-        setTimeout(() => {
-            if (workState < 40)
-            setWorkState(workState + 1)
-        }, 0)
-    }
-    rerenderStackGrid()
+    setTimeout(() => {
+        if (!workState) setWorkState(workState + 1)
+    }, 150)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
