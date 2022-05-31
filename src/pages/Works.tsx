@@ -45,14 +45,11 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     const rerenderStackGrid = () => {
         setTimeout(() => {
-            if (workState < 20)
+            if (workState < 40)
             setWorkState(workState + 1)
-            console.log(workState)
         }, 0)
     }
-
     rerenderStackGrid()
-    window.addEventListener('reset', rerenderStackGrid)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
@@ -69,3 +66,4 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     </div>
 }
+
