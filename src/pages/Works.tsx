@@ -42,9 +42,17 @@ const ContactElement:FC<{work: Work}> = ({work}) => {
 export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     const [workState, setWorkState] = useState(0)
-    setTimeout(() => {
-        setWorkState(workState + 1)
-    }, 0)
+
+    const rerenderStackGrid = () => {
+        setTimeout(() => {
+            if (workState < 20)
+            setWorkState(workState + 1)
+            console.log(workState)
+        }, 0)
+    }
+
+    rerenderStackGrid()
+    window.addEventListener('reset', rerenderStackGrid)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
