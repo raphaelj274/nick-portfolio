@@ -1,4 +1,4 @@
-import {FC} from 'react'
+import {FC, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar'
 import { Work } from '../services/works'
@@ -41,6 +41,11 @@ const ContactElement:FC<{work: Work}> = ({work}) => {
 
 export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
+    const [workState, setWorkState] = useState(0)
+    setTimeout(() => {
+        setWorkState(workState + 1)
+    }, 0)
+
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
     return <div style={{maxWidth: '100%', width: '100vw', height: '100vh'}}>
@@ -48,10 +53,11 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
          <NavBar/>
          <div style={{border: '1px solid white'}}>
          </div>
-            <StackGrid columnWidth={styles.columnWidth} style={{boxSizing: 'border-box', width: styles.width, margin: styles.gridMargin, overflow: 'hidden', minWidth: styles.minWidth}}>
-                {works.map(work => <ContactElement work={work}/>)}
-                {works.map(work => <ContactElement work={work}/>)}
-                {works.map(work => <ContactElement work={work}/>)}
-            </StackGrid>
+         <StackGrid columnWidth={styles.columnWidth} style={{boxSizing: 'border-box', width: styles.width, margin: styles.gridMargin, overflow: 'hidden', minWidth: styles.minWidth}}>
+             {works.map(work => <ContactElement work={work}/>)}
+             {works.map(work => <ContactElement work={work}/>)}
+             {works.map(work => <ContactElement work={work}/>)}
+         </StackGrid>
+
     </div>
 }
