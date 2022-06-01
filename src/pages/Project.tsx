@@ -50,8 +50,7 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
                 <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
                 <div style={{display: 'flex', marginTop: '20px', justifyContent: 'space-between', maxWidth: '100%'}}>
                     {carousel.map(related => {
-                        const relatedNumber = carousel.length
-                        return <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} relatedNumber={relatedNumber} onClick={() => {
+                        return <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} numberOfColumns={carousel.length} onClick={() => {
                                 setCurrentImage(related)
                                 setCurrentKey(currentKey + 1)
                                 }}/>
