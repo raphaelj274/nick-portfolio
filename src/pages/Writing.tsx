@@ -6,19 +6,19 @@ import { scrollToTop } from '../services/scrolling'
 
 
 const mobileStyles = {
-    gridTemplateColumns: '1fr',
     textAlignment: 'center' as const,
-    gridMargins: '0 auto auto auto',
-    gridMaxWidth: '90%',
-    headingMargin : '0 0 23px 0',
+    margin: 'auto',
+    width: '90%',
+    maxWidth: 'initial',
+    headingMargin : '0 0 23px 0'
 }
 
 const desktopStyles = {
-    gridTemplateColumns: '0.9fr 3fr 1.6fr',
     textAlignment: 'left' as const,
-    gridMargins: 'auto 60px auto 230px',
-    gridMaxWidth: 'calc(100% - 260px)',
-    headingMargin : '92px auto 24px auto',
+    margin: 'auto',
+    maxWidth: '54%',
+    width: '700px',
+    headingMargin : '92px auto 24px auto'
 }
 
 export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) => {
@@ -29,7 +29,7 @@ export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) =
 
     return <div style={{maxWidth: '100%', width: '100vw', paddingBottom: '30px'}}>
         <NavBar/>
-        <div style={{maxWidth: styles.gridMaxWidth, width: '100%', textAlign: styles.textAlignment, margin: styles.gridMargins, display: 'grid', gridTemplateColumns: styles.gridTemplateColumns}}>
+        <div style={{maxWidth: styles.maxWidth, margin: styles.margin, textAlign: styles.textAlignment, width: styles.width}}>
             <div style={{gridColumn: '2', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'start'}}>
                 <h1 style={{margin: styles.headingMargin}}>
                 {writingContent.heading}
