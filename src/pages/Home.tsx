@@ -37,12 +37,13 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
     scrollToTop()
 
     const marginTop = useIsMobile() ? '0px' : '100px'
+    const marginRight = useIsMobile() ? '0px' : '50px'
 
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
-        {useIsMobile() || <p style={{position: 'absolute', top: '84px', maxWidth: '320px', left: '70vw', maxHeight: '30px', fontSize: 'smaller'}}>{homepageText}</p>}
-        <div style={{color: "black", display: 'flex', flexDirection: 'column', justifyContent: 'center', gap:'20px', alignItems: 'center', fontSize: 'larger', marginBottom: '10px', marginTop}}>
+        {useIsMobile() || <p style={{position: 'absolute', top: '84px', maxWidth: '320px', left: '70vw', maxHeight: '30px', fontSize: 'smaller', marginRight: '30px', fontStyle: 'italic'}}>{homepageText}</p>}
+        <div style={{color: "black", display: 'flex', flexDirection: 'column', justifyContent: 'center', gap:'20px', alignItems: 'center', fontSize: 'larger', marginBottom: '10px', marginTop: marginTop, marginRight: marginRight}}>
             {works.map((work) => <ImageContainer work={work}/>)}
         </div>
     </div>
