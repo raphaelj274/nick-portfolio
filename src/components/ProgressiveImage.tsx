@@ -4,10 +4,9 @@ export interface ProgressiveImageProps {
   src: string,
   placeholder: string,
   alt: string,
-  width?: string,
+  width: string,
   main: boolean,
   onClick?: Function,
-  numberOfColumns?: number
 }
 
 export interface ProgressiveImageState {
@@ -41,17 +40,18 @@ class ProgressiveImage extends Component<ProgressiveImageProps, ProgressiveImage
 
   render() {
     const { currentSrc, loading } = this.state;
-    const { alt, width, main, onClick, numberOfColumns } = this.props;
+    const { alt, width, main, onClick } = this.props;
 
     const relatedStyles = {
       opacity: loading ? 0.5 : 1,
       transition: "opacity .15s linear",
-      width: numberOfColumns ? (100 / numberOfColumns - 1).toString() + '%' : '20%',
+      width: width,
       objectFit: 'cover' }
 
     const mainStyles = {
       opacity: loading ? 0.5 : 1,
       transition: "opacity .15s linear",
+      width: width
     }
 
     return (
@@ -60,7 +60,6 @@ class ProgressiveImage extends Component<ProgressiveImageProps, ProgressiveImage
         className="ProgressiveImage"
         style={main ? mainStyles : relatedStyles}
         alt={alt}
-        width={width}
         onClick={() => {
           onClick && onClick()
           }
