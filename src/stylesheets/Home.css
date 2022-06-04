@@ -1,0 +1,28 @@
+#text-box {
+  position: absolute;
+  top: 84px;
+  max-width: 320px;
+  left: 70vw;
+  max-height: 30px;
+  font-size: smaller;
+  margin-right: 30px;
+  font-style: italic;
+}
+
+@media(max-width: 1050px) and (min-width: 769px) {
+
+  #text-box {
+    position: fixed;
+    top: 320px;
+    max-width: 190px;
+    left: 59px;
+
+  }
+
+  #main-box {
+    position: relative;
+    left: 50px
+  }
+
+}
+
