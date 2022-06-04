@@ -50,7 +50,7 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
     // properly, the document height is around 2321 on mobile, and 2666 on desktop
 
     setTimeout(() => {
-        if (window.document.body.offsetHeight < 500) {
+        if (window.document.body.offsetHeight < 1000) {
           setWorkState(workState + 1)
         }
     }, 0)
