@@ -44,12 +44,15 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
     const [workState, setWorkState] = useState(0)
 
     setTimeout(() => {
-        if (!workState) setWorkState(workState + 1)
-    }, 150)
+        if (window.document.body.offsetHeight < 1000) {
+          setWorkState(workState + 1)
+        }
+        console.log(workState)
+    }, 0)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    return <div style={{maxWidth: '100%', width: '100vw', height: '100vh'}}>
+    return <div style={{maxWidth: '100%', width: '100vw'}}>
          <EmptyBar/>
          <NavBar/>
          <div style={{border: '1px solid white'}}>
@@ -62,4 +65,3 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     </div>
 }
-
