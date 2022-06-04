@@ -9,7 +9,7 @@ import { EmptyBar } from '../components/EmptyBar';
 
 
 const mobileStyles = {
-    gridMargin: '30px auto auto auto',
+    gridMargin: '30px auto 30px auto',
     width: '95%',
     minWidth: 'initial',
     columnWidth: '36%'
@@ -17,7 +17,7 @@ const mobileStyles = {
 }
 
 const desktopStyles = {
-    gridMargin: '100px auto auto 200px',
+    gridMargin: '100px auto 50px 200px',
     width: 'calc(100% - 380px)',
     minWidth: '68%',
     columnWidth: '33%'
@@ -43,11 +43,11 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     const [workState, setWorkState] = useState(0)
 
+
     setTimeout(() => {
         if (window.document.body.offsetHeight < 1000) {
           setWorkState(workState + 1)
         }
-        console.log(workState)
     }, 0)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
@@ -65,3 +65,12 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     </div>
 }
+
+setTimeout(() => {
+    console.log(window.document.body.offsetHeight)
+}, 4000)
+
+// 338 on mobile
+// 262 on desktop
+// 2321 on mobile
+// 2666 on desktop
