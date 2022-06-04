@@ -45,6 +45,3 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
         </div>
     </div>
 }
-
-
-
