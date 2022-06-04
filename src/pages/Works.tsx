@@ -44,8 +44,13 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
     const [workState, setWorkState] = useState(0)
 
 
+    // Changes the state (and thus rerenders the component) until the document body height exceeds the
+    // specified limit of 500. With the current displayed works, when the grid doesn't render properly,
+    // the document height is around 338 on mobile, and around 262 on desktop. When the grid does render
+    // properly, the document height is around 2321 on mobile, and 2666 on desktop
+
     setTimeout(() => {
-        if (window.document.body.offsetHeight < 1000) {
+        if (window.document.body.offsetHeight < 500) {
           setWorkState(workState + 1)
         }
     }, 0)
@@ -70,7 +75,4 @@ setTimeout(() => {
     console.log(window.document.body.offsetHeight)
 }, 4000)
 
-// 338 on mobile
-// 262 on desktop
-// 2321 on mobile
-// 2666 on desktop
+
