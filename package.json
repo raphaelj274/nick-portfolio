@@ -48,5 +48,8 @@
   },
   "devDependencies": {
     "@types/react-stack-grid": "^0.7.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   }
 }
