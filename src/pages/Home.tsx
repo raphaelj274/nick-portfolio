@@ -41,7 +41,7 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
         <EmptyBar/>
         <NavBar/>
         <div style={{color: "black", display: 'flex', flexDirection: 'column', justifyContent: 'center', gap:'20px', alignItems: 'center', fontSize: 'larger', marginBottom: '10px', marginTop}}>
-            {works.map((work) => <ImageContainer work={work}/>)}
+            {works.map((work) => <ImageContainer work={work} key={work.id}/>)}
         </div>
     </div>
 }

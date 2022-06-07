@@ -34,8 +34,8 @@ export const Writing:FC<{writingContent: WritingContent}> = ({writingContent}) =
                 <h1 style={{margin: styles.headingMargin}}>
                 {writingContent.heading}
                 </h1>
-                {writingContent.paragraphs.map(x => {
-                    return <p style={{marginTop: '5px'}}>{x}</p>
+                {writingContent.paragraphs.map(paragraph => {
+                    return <p key={paragraph} style={{marginTop: '5px'}}>{paragraph}</p>
                 })}
                 <p style={{marginTop: '5px'}}>
                 <i>{writingContent.italicText}</i>
