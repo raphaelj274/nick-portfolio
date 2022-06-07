@@ -55,9 +55,9 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
          <div style={{border: '1px solid white'}}>
          </div>
          <StackGrid columnWidth={styles.columnWidth} style={{boxSizing: 'border-box', width: styles.width, margin: styles.gridMargin, overflow: 'hidden', minWidth: styles.minWidth}}>
-             {works.map(work => <ContactElement work={work}/>)}
-             {works.map(work => <ContactElement work={work}/>)}
-             {works.map(work => <ContactElement work={work}/>)}
+             {works.map(work => <ContactElement work={work} key={work.id}/>)}
+             {works.map(work => <ContactElement work={work} key={work.id}/>)}
+             {works.map(work => <ContactElement work={work} key={work.id}/>)}
          </StackGrid>
 
     </div>

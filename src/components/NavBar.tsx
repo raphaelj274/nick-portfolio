@@ -33,7 +33,7 @@ export const NavBar: FC = () => {
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
     return <div style={{minWidth: styles.minWidth, width: styles.width, justifyContent: styles.justifyContent, position: styles.position, marginLeft: styles.marginLeft, marginTop: styles.marginTop, display: 'flex', flexDirection: styles.flexDirection, gap: styles.gap, marginBottom: styles.marginBottom}}>
-    {pages.map(page => <Link to={page.route} style={{textDecoration: 'none', color: 'black'}}>
+    {pages.map(page => <Link key={page.title} to={page.route} style={{textDecoration: 'none', color: 'black'}}>
         {page.title}
     </Link>)}
     </div>
