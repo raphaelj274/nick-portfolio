@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import { NavBar } from '../components/NavBar'
 import { WritingContent } from '../services/works'
-import useIsMobile from '../services/useIsMobile'
+import {useIsMobile} from '../services/useIsMobile'
 import { scrollToTop } from '../services/scrolling'
 import { WritingBar } from '../components/WritingBar'
 

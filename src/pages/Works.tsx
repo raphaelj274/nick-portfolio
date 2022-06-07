@@ -4,7 +4,7 @@ import { NavBar } from '../components/NavBar'
 import { Work } from '../services/works'
 import StackGrid from "react-stack-grid";
 import { scrollToTop } from '../services/scrolling';
-import useIsMobile from '../services/useIsMobile';
+import {useIsMobile} from '../services/useIsMobile';
 import { EmptyBar } from '../components/EmptyBar';
 
 

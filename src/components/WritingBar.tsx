@@ -1,6 +1,5 @@
 import {FC} from 'react'
-import { Link } from 'react-router-dom'
-import useIsMobile from '../services/useIsMobile'
+import {useIsLargeScreen, useIsMobile} from '../services/useIsMobile'
 import { writings } from '../services/works'
 import { scrollToHash } from '../services/scrolling';
 
@@ -10,9 +9,9 @@ export const WritingBar: FC = () => {
         minWidth: 'initial',
         width: '90px',
         justifyContent: 'initial',
-        marginTop: '180px',
+        marginTop: useIsLargeScreen() ? '280px' : '180px',
         marginBottom: 'initial',
-        marginLeft: '150px',
+        marginLeft: useIsLargeScreen() ? '60px' : '150px',
         flexDirection: 'column' as const,
         position: 'fixed' as const,
         gap: 20

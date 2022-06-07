@@ -3,7 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { RelatedImage, Work } from '../services/works';
 import { NavBar } from '../components/NavBar'
 import { NavigateBackButton } from '../components/NavigateBackButton'
-import useIsMobile from '../services/useIsMobile'
+import {useIsMobile} from '../services/useIsMobile'
 import { scrollToTop } from '../services/scrolling'
 import ProgressiveImage from '../components/ProgressiveImage';
 
