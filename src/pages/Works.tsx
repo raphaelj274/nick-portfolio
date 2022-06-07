@@ -9,7 +9,7 @@ import { EmptyBar } from '../components/EmptyBar';
 
 
 const mobileStyles = {
-    gridMargin: '30px auto auto auto',
+    gridMargin: '30px auto 30px auto',
     width: '95%',
     minWidth: 'initial',
     columnWidth: '36%'
@@ -17,7 +17,7 @@ const mobileStyles = {
 }
 
 const desktopStyles = {
-    gridMargin: '100px auto auto 200px',
+    gridMargin: '100px auto 50px 200px',
     width: 'calc(100% - 380px)',
     minWidth: '68%',
     columnWidth: '33%'
@@ -43,13 +43,22 @@ export const Works:FC<{works: Array<Work>}> = ({works}) => {
 
     const [workState, setWorkState] = useState(0)
 
+
+    // Changes the state (and thus rerenders the component) until the document body height exceeds the
+    // specified limit of 1000. With the current displayed works, when the grid doesn't render properly,
+    // the document height is around 338 on mobile, and around 262 on desktop. When the grid does render
+    // properly, the document height is around 2321 on mobile, and 2666 on desktop. Using 500 as the
+    // limit still causes issues, despite being above the inproper heights specified above
+
     setTimeout(() => {
-        if (!workState) setWorkState(workState + 1)
-    }, 150)
+        if (window.document.body.offsetHeight < 1000) {
+          setWorkState(workState + 1)
+        }
+    }, 0)
 
     const styles = useIsMobile() ? mobileStyles : desktopStyles
 
-    return <div style={{maxWidth: '100%', width: '100vw', height: '100vh'}}>
+    return <div style={{maxWidth: '100%', width: '100vw'}}>
          <EmptyBar/>
          <NavBar/>
          <div style={{border: '1px solid white'}}>
