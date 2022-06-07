@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useIsMobile = () => {
+const useIsScreenType = (width: number) => {
     const [screenSize, setScreenSize] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -14,7 +14,9 @@ const useIsMobile = () => {
         }
     }, []);
     
-    return screenSize <= 768;
+    return screenSize <= width;
 }
 
-export default useIsMobile
+export const useIsMobile = () => useIsScreenType(768)
+export const useIsLargeScreen = () => useIsScreenType(1150)
+

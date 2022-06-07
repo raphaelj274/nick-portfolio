@@ -2,7 +2,7 @@ import {FC} from 'react'
 import { Work } from '../services/works'
 import { EmptyBar } from '../components/EmptyBar'
 import { NavBar } from '../components/NavBar'
-import useIsMobile from '../services/useIsMobile'
+import {useIsMobile} from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom'
 import { scrollToTop } from '../services/scrolling'
 

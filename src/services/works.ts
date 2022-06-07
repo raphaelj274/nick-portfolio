@@ -124,8 +124,8 @@ export interface WritingContent {
     imageAltText: string
 }
 
-export const writingContent: WritingContent = {
-    heading: 'A theatrical exhibition by the Turner Prize winning artist and cultural activist',
+const writingContentA: WritingContent = {
+    heading: 'Turner Prize',
     paragraphs: ['This large-scale exhibition will debut recent work and include selected highlights from Lubaina Himid’s influential career. Taking inspiration from her interest in theatre, the exhibition will unfold in a sequence of scenes designed to place visitors centre-stage and backstage.',
     'Initially trained in theatre design, Himid is known for her innovative approaches to painting and to social engagement. She has been pivotal in the UK since the 1980s for her contributions to the British Black arts movement, making space for the expression and recognition of Black experience and womens creativity. Over the last decade, she has of Black experience and women\'s creativity. Over the last decade, she has earned international recognition for her figurative paintings, which explore overlooked and invisible aspects of history and of contemporary everyday life. In 2017 she was awarded the Turner Prize and in 2018 she was bestowed with the honorary title of CBE for her contributions to the arts.'],
     italicText: 'Exhibition organised by Tate Modern in collaboration with Musée cantonal des Beaux-Arts de Lausanne/Plateforme 10',
@@ -133,3 +133,14 @@ export const writingContent: WritingContent = {
     imageCaption: 'Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid',
     imageAltText: 'placeholder'
 }
+
+const writingContentB: WritingContent = {
+    heading: 'Bada bing bada boom!',
+    paragraphs: ['What really is the meaning of life? Is it coding? Is it sculptures? or is it going to really cool events in hackney? Lets find out!'],
+    italicText: 'Exhibition organised by Tate Modern in collaboration with Musée cantonal des Beaux-Arts de Lausanne/Plateforme 10',
+    image: writingPageImage,
+    imageCaption: 'Lubaina Himid <i>Six Tailors</i> 2019 Rennie Collection, Vancouver &copy; Lubaina Himid',
+    imageAltText: 'placeholder'
+}
+
+export const writings = [writingContentA, writingContentB]
