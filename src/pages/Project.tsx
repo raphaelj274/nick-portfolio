@@ -46,13 +46,16 @@ const ProjectContent: FC<{work: Work}> = ({work}) => {
                 <p style={{marginTop: styles.subheadingTopMargin}}>{work.caption}</p>
             </div>
             <div style={{maxWidth: styles.width, padding: styles.bodyPadding}} >
-                <ProgressiveImage src={currentImage.image} placeholder={currentImage.backupImage} width={'100%'} alt={currentImage.caption} main={true} key={currentKey} />
+                <ProgressiveImage src={currentImage.image} placeholder={currentImage.backupImage} alt={currentImage.caption} main={true} width={'100%'} key={currentKey} />
                 <p style={{textAlign:'left', fontSize: 'small', margin: 0}}>{currentImage.caption}</p>
-                <div style={{display: 'flex', marginTop: '20px'}}>
-                    {carousel.map(related => <ProgressiveImage src={related.image} placeholder={related.backupImage} alt={related.caption} main={false} onClick={() => {
-                        setCurrentImage(related)
-                        setCurrentKey(currentKey + 1)
-                        }}/>)}
+                <div style={{display: 'flex', marginTop: '20px', justifyContent: 'space-between', maxWidth: '100%'}}>
+                    {carousel.map(related => {
+                        const relatedImageWidth = (100 / carousel.length - 1).toString() + '%'
+                        return <ProgressiveImage src={related.image} placeholder={related.backupImage} width={relatedImageWidth} alt={related.caption} main={false} onClick={() => {
+                                setCurrentImage(related)
+                                setCurrentKey(currentKey + 1)
+                                }}/>
+                    })}
                 </div>
             </div>
             <p style={{padding: styles.bodyPadding, maxWidth: styles.paragraphMaxWidth, fontSize: 'small'}}>{work.description}</p>
