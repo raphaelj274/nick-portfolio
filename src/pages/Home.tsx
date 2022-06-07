@@ -5,6 +5,8 @@ import { NavBar } from '../components/NavBar'
 import useIsMobile from '../services/useIsMobile'
 import { useNavigate } from 'react-router-dom'
 import { scrollToTop } from '../services/scrolling'
+import { homepageText } from '../services/works'
+import '../stylesheets/Home.css'
 
 
 const ImageContainer:FC<{work: Work}> = ({work}) => {
@@ -35,12 +37,13 @@ export const Home:FC<{works: Array<Work>}> = ({works}) => {
 
     scrollToTop()
 
-    const marginTop = useIsMobile() ? '0px' : '100px'
+    const margin = useIsMobile() ? '0px 0px 40px auto' : '100px 50px 122px auto'
 
     return <div style={{border: '0.5px solid white'}}>
         <EmptyBar/>
         <NavBar/>
-        <div style={{color: "black", display: 'flex', flexDirection: 'column', justifyContent: 'center', gap:'20px', alignItems: 'center', fontSize: 'larger', marginBottom: '10px', marginTop}}>
+        {useIsMobile() || <p id='text-box'>{homepageText}</p>}
+        <div id='main-box' style={{color: "black", display: 'flex', flexDirection: 'column', justifyContent: 'center', gap:'20px', alignItems: 'center', fontSize: 'larger', margin: margin}}>
             {works.map((work) => <ImageContainer work={work}/>)}
         </div>
     </div>
